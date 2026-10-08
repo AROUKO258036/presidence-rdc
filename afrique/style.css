@@ -1,0 +1,15 @@
+
+*{box-sizing:border-box}
+body{margin:0;background:#fff}
+.africa-page{width:100%;padding:52px 36px 76px;background:#fff}
+.africa-head{width:min(1540px,100%);margin:0 auto 36px}
+.africa-head p{margin:0 0 10px;color:#687586;font:700 .72rem/1.2 Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.africa-head h1{margin:0;color:#12243b;font-family:Georgia,'Times New Roman',serif;font-size:clamp(3rem,6vw,6.4rem);font-weight:400;line-height:.95}
+.africa-grid{width:min(1540px,100%);margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.africa-tile{position:relative;display:block;min-height:390px;overflow:hidden;background:#15365f;text-decoration:none}
+.africa-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.africa-tile__shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,18,35,.78),rgba(5,18,35,.08) 58%)}
+.africa-tile__label{position:absolute;left:28px;right:28px;bottom:24px;display:flex;justify-content:space-between;align-items:end;color:#fff;font:700 clamp(1.7rem,3vw,3.1rem)/1 Arial,sans-serif}
+.africa-tile__label i{font-style:normal;font-weight:300;font-size:1.3em}
+.africa-tile:hover img{transform:scale(1.025)}
+@media(max-width:760px){.africa-page{padding:38px 18px 58px}.africa-grid{grid-template-columns:1fr}.africa-tile{min-height:300px}}

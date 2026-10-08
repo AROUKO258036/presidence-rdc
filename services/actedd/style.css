@@ -1,0 +1,17 @@
+
+*{box-sizing:border-box}
+body{margin:0;background:#fff}
+.service-detail{padding:58px 34px 84px;background:#fff}
+.service-detail__inner{width:min(1120px,100%);margin:0 auto}
+.service-detail__back{display:inline-flex;margin-bottom:42px;color:#15365f;text-decoration:none;font:700 .78rem/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.service-detail__acro{margin:0 0 14px;color:#0b79dc;font:800 .78rem/1.2 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.service-detail h2{margin:0 0 42px;color:#12243b;;line-height:1.03}
+.service-detail__prose{max-width:980px;font:400 clamp(1.06rem,1.35vw,1.28rem)/1.75 Arial,sans-serif;color:#162a42}
+.service-detail__prose p{margin:0 0 28px;text-align:justify;text-justify:inter-word}
+.service-detail__links{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}
+.service-detail__links a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid #15365f;border-radius:999px;color:#15365f;text-decoration:none;font:700 .8rem/1 Arial,sans-serif}
+@media(max-width:700px){.service-detail{padding:38px 18px 64px}.service-detail h1{margin-bottom:30px}.service-detail__prose{font-size:1rem}}
+/* Visuel officiel du service */
+.service-detail__visual{width:100%;margin:0 0 42px;display:flex;justify-content:center;align-items:center}
+.service-detail__visual img{display:block;width:min(520px,100%);height:auto;max-height:720px;object-fit:contain}
+@media(max-width:700px){.service-detail__visual{margin-bottom:30px}.service-detail__visual img{width:min(420px,100%)}}

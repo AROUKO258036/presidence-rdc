@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap");
+:root{--navy:#15365f;--navy2:#0b1b33;--blue:#0784ff;--yellow:#f7d618;--red:#ce1021;--ink:#12243b;--muted:#778394;--paper:#fff;--soft:#f3f6f9;--serif:"Libre Baskerville",Georgia,serif;--sans:"Inter",Arial,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:var(--sans);background:#fff}a{color:inherit;text-decoration:none}
+.breadcrumb{max-width:1420px;margin:0 auto;padding:28px 32px 18px;font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;color:#7b8490}.breadcrumb strong{color:var(--ink)}.breadcrumb span{padding:0 10px}.page-hero{max-width:1420px;margin:0 auto;padding:0 32px 70px}.portrait-hero{background:var(--navy2);min-height:620px;display:grid;place-items:end center;overflow:hidden;position:relative}.portrait-hero img{max-height:620px;max-width:min(620px,70vw);width:auto;object-fit:contain;display:block}.portrait-hero.placeholder{place-items:center}.portrait-hero.placeholder img{max-height:520px;opacity:.9}.identity{padding-top:34px}.eyebrow{color:#0f68c8;text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:700}.display-title{font-family:var(--serif);font-weight:400;font-size:clamp(2.7rem,6vw,5.8rem);line-height:.98;margin:12px 0 8px;letter-spacing:-.04em}.subtitle{font-size:1rem;color:var(--muted)}.prose{max-width:940px;margin:0 auto;padding:30px 32px 90px;font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.65}.prose p{margin:0 0 30px;text-align:justify}.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.8rem);font-weight:400;margin:0 0 32px}.download-row{display:flex;gap:10px;flex-wrap:wrap;padding-top:18px}.pill{border:1px solid var(--ink);border-radius:999px;padding:10px 15px;font-size:.75rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{border-top:1px solid #ccd3da;padding:20px 0 28px}.card h3{font-family:var(--serif);font-size:1.45rem;margin:7px 0 8px}.card p{font-size:.95rem;line-height:1.6;color:#4f5b6a}.card .years{color:#0f68c8;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}.card-link{display:inline-flex;margin-top:8px;border-bottom:1px solid var(--ink);font-size:.83rem;font-weight:700;padding-bottom:4px}.section{max-width:1420px;margin:auto;padding:72px 32px}.section.soft{background:var(--soft);max-width:none}.section.soft>.inner{max-width:1420px;margin:auto}.symbols{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid #ccd3da}.symbol{padding:28px 12px 28px 0;border-bottom:1px solid #ccd3da;display:grid;grid-template-columns:72px 1fr;gap:20px}.symbol:nth-child(even){padding-left:32px}.symbol-num{font-family:var(--serif);font-size:2.3rem;color:#a7b2be}.symbol h3{margin:0 0 9px;font-family:var(--serif);font-size:1.6rem}.symbol p{margin:0;color:#53606f;line-height:1.55}.constitution{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}.constitution .big{font-family:var(--serif);font-size:clamp(2.4rem,5vw,5rem);line-height:1.02}.notice{border:1px solid #d5dbe2;border-radius:20px;padding:30px;background:#fff}.notice h3{font-family:var(--serif);font-size:1.8rem;margin:0 0 12px}.notice p{line-height:1.65;color:#526070}.prefooter{background:#eef3f7;padding:44px 24px}.prefooter__inner{max-width:1180px;margin:auto;text-align:center}.newsletter-line{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}.newsletter-line span{font-size:.92rem}.newsletter-line button{border:1px solid var(--ink);background:#fff;border-radius:999px;padding:9px 18px;cursor:pointer}.republic-mark{margin-top:34px;font-family:var(--serif);font-size:1.15rem}.republic-mark div{display:flex;width:110px;margin:12px auto 0;height:4px}.republic-mark i{flex:1}.republic-mark i:nth-child(1){background:#0784ff}.republic-mark i:nth-child(2){background:var(--yellow)}.republic-mark i:nth-child(3){background:var(--red)}.site-footer{background:var(--navy2);color:#fff;text-align:center;padding:54px 24px 32px}.footer-palace{width:min(330px,70vw);height:auto;object-fit:contain;opacity:.95}.footer-title{text-transform:uppercase;letter-spacing:.09em;font-size:.82rem;line-height:1.6;margin:16px 0}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:.72rem;margin-bottom:24px}.site-footer small{color:rgba(255,255,255,.55);font-size:.68rem}.modal[hidden]{display:none}.modal{position:fixed;inset:0;z-index:2000;background:rgba(5,18,35,.62);display:grid;place-items:center;padding:20px}.modal-card{background:#fff;width:min(440px,100%);padding:32px;border-radius:18px;position:relative}.modal-x{position:absolute;right:14px;top:10px;border:0;background:none;font-size:1.6rem;cursor:pointer}.modal-card form{display:flex;gap:8px}.modal-card input{flex:1;min-width:0;padding:13px;border:1px solid #ccd3da;border-radius:10px}.modal-card form button{border:0;background:var(--navy);color:#fff;border-radius:10px;padding:0 16px}
+@media(max-width:1120px){.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.page-hero,.breadcrumb,.section,.prose{padding-left:18px;padding-right:18px}.portrait-hero{min-height:420px}.portrait-hero img{max-height:420px;max-width:94vw}.display-title{font-size:2.65rem}.cards{grid-template-columns:1fr}.symbols{grid-template-columns:1fr}.symbol:nth-child(even){padding-left:0}.constitution{grid-template-columns:1fr}.prose{font-size:1rem}.modal-card form{display:grid}}
+
+/* =========================================================
+   BIOGRAPHIES — style éditorial sobre inspiré du format demandé
+   ========================================================= */
+.page-hero {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 38px 32px 42px;
+}
+
+.portrait-hero {
+  min-height: 600px;
+  background: var(--navy2);
+  display: grid;
+  place-items: end center;
+  overflow: hidden;
+}
+
+.portrait-hero img {
+  display: block;
+  width: auto;
+  max-width: min(660px, 78vw);
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.identity {
+  padding-top: 28px;
+}
+
+.display-title {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: clamp(2rem, 3.15vw, 3.55rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.prose {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 54px 32px 96px;
+  font-family: var(--sans);
+  font-size: clamp(1.08rem, 1.32vw, 1.42rem);
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.prose p {
+  margin: 0 0 34px;
+  text-align: justify;
+  text-justify: inter-word;
+  text-wrap: pretty;
+}
+
+.prose .download-row {
+  padding-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .page-hero {
+    padding: 24px 20px 34px;
+  }
+
+  .portrait-hero {
+    min-height: 460px;
+  }
+
+  .portrait-hero img {
+    max-height: 460px;
+    max-width: 92vw;
+  }
+
+  .display-title {
+    font-size: clamp(1.8rem, 7vw, 2.75rem);
+    white-space: normal;
+  }
+
+  .prose {
+    padding: 38px 20px 72px;
+    font-size: 1.05rem;
+    line-height: 1.68;
+  }
+}
+
+
+
+/* Ajustement demandé : nom du Président centré sous sa photo */
+.page-hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+}
+
+.page-hero .portrait-hero{
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+
+.page-hero .identity{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.page-hero .display-title{
+  text-align:center;
+  margin:0 auto;
+  white-space:normal;
+}
+
+@media (min-width: 900px){
+  .page-hero .display-title{
+    max-width: 100%;
+  }
+}
+
+
+/* Bande portrait pleine largeur — même logique visuelle que le pré-footer */
+.page-hero{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding: 0 0 42px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+}
+
+.page-hero .portrait-hero{
+  width:100%;
+  max-width:none;
+  min-height:600px;
+  margin:0;
+  background:var(--navy2, #0b1b33);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:0;
+}
+
+.page-hero .portrait-hero img{
+  display:block;
+  width:auto;
+  max-width:min(680px, 82vw);
+  max-height:600px;
+  height:auto;
+  object-fit:contain;
+  object-position:bottom center;
+}
+
+.page-hero .identity{
+  width:min(1420px, 100%);
+  padding:0 32px;
+  display:flex;
+  justify-content:center;
+}
+
+.page-hero .display-title{
+  margin:0 auto;
+  text-align:center;
+}
+
+@media (max-width:900px){
+  .page-hero{
+    padding: 0 0 34px;
+  }
+
+  .page-hero .portrait-hero{
+    min-height:460px;
+  }
+
+  .page-hero .portrait-hero img{
+    max-height:460px;
+    max-width:94vw;
+  }
+
+  .page-hero .identity{
+    padding:0 20px;
+  }
+}
+
+
+/* Correctif : suppression de la bande blanche au-dessus du portrait */
+.page-hero{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* PORTRAIT PRÉSIDENT — bande navy officielle */
+.page-hero .portrait-hero{
+  background:#15365f !important;
+}
+
+
+/* PORTRAIT PRÉSIDENT — bande navy + décalage bas */
+.page-hero{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0 0 42px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+  overflow:visible;
+}
+
+.page-hero .portrait-hero{
+  position:relative;
+  width:100%;
+  max-width:none;
+  height:520px;
+  min-height:520px;
+  margin:0 0 105px;
+  background:#15365f !important;
+  overflow:visible;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  border-radius:0;
+}
+
+.page-hero .portrait-hero img{
+  position:relative;
+  z-index:2;
+  display:block;
+  height:610px;
+  max-width:none;
+  max-height:none;
+  margin:0 auto;
+  object-fit:cover;
+  object-position:center top;
+  background:#15365f;
+}
+
+.page-hero .identity{
+  width:min(1420px,100%);
+  margin:0 auto;
+  padding:0 32px;
+  display:flex;
+  justify-content:center;
+}
+
+.page-hero .display-title{
+  margin:0 auto;
+  text-align:center;
+  white-space:nowrap;
+}
+
+.prose p{
+  text-align:justify !important;
+  text-justify:inter-word;
+}
+
+@media (max-width:900px){
+  .page-hero .portrait-hero{
+    height:400px;
+    min-height:400px;
+    margin-bottom:85px;
+  }
+
+  .page-hero .portrait-hero img{
+    width:min(500px, 92vw);
+    height:470px;
+    object-position:center top;
+  }
+
+  .page-hero .identity{
+    padding:0 20px;
+  }
+
+  .page-hero .display-title{
+    white-space:normal;
+  }
+}

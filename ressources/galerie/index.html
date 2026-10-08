@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Galerie photo de la Présidence de la République démocratique du Congo.">
+  <title>Galerie photo — Présidence de la République</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../rdc.css">
+</head>
+<body>
+  <div data-site-header></div>
+
+  <main class="gallery-page">
+    <h1 class="sr-only">Galerie photo</h1>
+    <section class="gallery-grid" aria-label="Galerie photo de la Présidence">
+      <button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260924-WA0100-compressed.jpg" aria-label="Agrandir : Les Léopards de la RDC">
+          <img src="https://www.presidence.cd/uploads/IMG-20260924-WA0100-compressed.jpg" alt="Les Léopards de la RDC" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260922-WA0017.jpg" aria-label="Agrandir : Cérémonie officielle de la Présidence">
+          <img src="https://www.presidence.cd/uploads/IMG-20260922-WA0017.jpg" alt="Cérémonie officielle de la Présidence" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260915-WA0000.jpg" aria-label="Agrandir : Réunion interinstitutionnelle">
+          <img src="https://www.presidence.cd/uploads/IMG-20260915-WA0000.jpg" alt="Réunion interinstitutionnelle" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260914-WA0030.jpg" aria-label="Agrandir : Activité présidentielle au Lycée Shaumba">
+          <img src="https://www.presidence.cd/uploads/IMG-20260914-WA0030.jpg" alt="Activité présidentielle au Lycée Shaumba" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260913-WA0068.jpg" aria-label="Agrandir : Activité officielle de la Présidence">
+          <img src="https://www.presidence.cd/uploads/IMG-20260913-WA0068.jpg" alt="Activité officielle de la Présidence" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260904-WA0027.jpg" aria-label="Agrandir : Activité officielle du Chef de l'État">
+          <img src="https://www.presidence.cd/uploads/IMG-20260904-WA0027.jpg" alt="Activité officielle du Chef de l'État" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260814-WA0033.jpg" aria-label="Agrandir : Conseil des ministres">
+          <img src="https://www.presidence.cd/uploads/IMG-20260814-WA0033.jpg" alt="Conseil des ministres" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260731-WA0029.jpg" aria-label="Agrandir : Conseil des ministres à Kaniama-Kasese">
+          <img src="https://www.presidence.cd/uploads/IMG-20260731-WA0029.jpg" alt="Conseil des ministres à Kaniama-Kasese" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/067A4017-compressed.jpg" aria-label="Agrandir : Réunion du Conseil des ministres">
+          <img src="https://www.presidence.cd/uploads/067A4017-compressed.jpg" alt="Réunion du Conseil des ministres" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/IMG-20260626-WA0006.jpg" aria-label="Agrandir : Conseil des ministres">
+          <img src="https://www.presidence.cd/uploads/IMG-20260626-WA0006.jpg" alt="Conseil des ministres" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/ANT_3588.JPG" aria-label="Agrandir : Activité gouvernementale">
+          <img src="https://www.presidence.cd/uploads/ANT_3588.JPG" alt="Activité gouvernementale" loading="lazy">
+        </button>
+<button class="gallery-item" type="button" data-gallery-open data-src="https://www.presidence.cd/uploads/ec777aae7ddd836642f45840c2c194a3.jpg" aria-label="Agrandir : Réunion extraordinaire du Conseil des ministres">
+          <img src="https://www.presidence.cd/uploads/ec777aae7ddd836642f45840c2c194a3.jpg" alt="Réunion extraordinaire du Conseil des ministres" loading="lazy">
+        </button>
+    </section>
+  </main>
+
+  <div class="gallery-lightbox" data-gallery-lightbox hidden>
+    <button class="gallery-lightbox__backdrop" type="button" data-gallery-close aria-label="Fermer"></button>
+
+    <button class="gallery-lightbox__nav gallery-lightbox__nav--prev"
+            type="button"
+            data-gallery-prev
+            aria-label="Photo précédente">
+      <span aria-hidden="true">←</span>
+    </button>
+
+    <div class="gallery-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Aperçu de la photographie">
+      <button class="gallery-lightbox__close" type="button" data-gallery-close aria-label="Fermer">×</button>
+      <img src="" alt="" data-gallery-image>
+    </div>
+
+    <button class="gallery-lightbox__nav gallery-lightbox__nav--next"
+            type="button"
+            data-gallery-next
+            aria-label="Photo suivante">
+      <span aria-hidden="true">→</span>
+    </button>
+  </div>
+
+  <div data-site-footer></div>
+
+  <script defer src="./script.js"></script>
+  <script defer src="../../site-shell.js"></script>
+  <script defer src="../../rdc.js"></script>
+</body>
+</html>
