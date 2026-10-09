@@ -310,6 +310,213 @@
     contact: []
   };
 
+
+  const programDetails = {
+    "programme-presidentiel": {
+      badge: "Programme présidentiel",
+      title: "Programme présidentiel",
+      lead: "Le programme présidentiel rassemble les priorités portées par le Chef de l’État. Il a été structuré autour de grands secteurs et de piliers d’action, puis décliné dans le programme du Gouvernement.",
+      source: "https://presidence.cd/programme-presidentiel",
+      sourceLabel: "Voir la source officielle",
+      vision: "Fonder un État moderne, vaincre la pauvreté, décrétée grande cause nationale pour construire un Congo fort tourné vers son développement dans la paix et la sécurité, un Congo réconcilié avec lui-même.",
+      sectors: [
+        {
+          number: "01",
+          title: "Bonne gouvernance",
+          image: "https://presidence.cd/data1/images/bonne.png",
+          pillars: [
+            "Pacifier le pays",
+            "Promouvoir la réconciliation nationale",
+            "Consolider la démocratie",
+            "Restaurer l'Etat de droit et son autorité",
+            "Réhabiliter et redorer l'image de la diplomatie",
+            "Lutter contre la corruption et les crimes économiques",
+            "Consolider la stabilité macroéconomique, assainir les finances publiques et reformer le système financier"
+          ]
+        },
+        {
+          number: "02",
+          title: "L'homme",
+          image: "https://presidence.cd/data1/images/homme.png",
+          pillars: [
+            "Faire de l'éducation la clé du changement et le principal ascenseur social",
+            "Mettre en place la couverture santé universelle",
+            "Promouvoir l'emploi et la formation professionnelle continue",
+            "Autonomiser la femme et promouvoir la jeunesse"
+          ]
+        },
+        {
+          number: "03",
+          title: "Croissance économique durable",
+          image: "https://presidence.cd/data1/images/croissance.png",
+          pillars: [
+            "Améloirer le climat des affaires et promouvoir l'entrepreneuriat",
+            "Lutter contre le changement climatique",
+            "Relever le défit de l'accès à l'électricité et à l'eau",
+            "Aménager le territoire, développer et moderniser les infrastructures",
+            "Développer l'agriculture et l'agro-industrie",
+            "Diversifier l'économie et développer le commerce, l'industrie ainsi que les PME/PMI",
+            "Rendre le secteur des mines et des hydrocarbures attractifs et performants",
+            "Développer le tourisme, la culture et les arts"
+          ]
+        },
+        {
+          number: "04",
+          title: "Société solidaire",
+          image: "https://presidence.cd/data1/images/societe.png",
+          pillars: [
+            "Combattre la pauvreté, l'exclusion et la vulnérabilité"
+          ]
+        }
+      ]
+    },
+
+    "services/plan-national-du-numerique": {
+      badge: "Programme",
+      title: "Plan National du Numérique « Horizon 2025 »",
+      lead: "Le Plan National du Numérique est le document de planification stratégique qui porte la transformation numérique de la République Démocratique du Congo.",
+      source: "https://presidence.cd/services/1/plan_national_du_numerique_horizon_2025",
+      sourceLabel: "Voir la source officielle",
+      vision: "Faire du Numérique congolais un levier d'intégration, de bonne gouvernance, de croissance économique et de progrès social.",
+      prose: [
+        "Le PNN résulte de la réflexion engagée dans le cadre de l’Atelier de Validation du Plan National du Numérique « Horizon 2025 », tenu à Kinshasa en septembre 2019.",
+        "Il vise l’appropriation des technologies, le développement de l’économie numérique et la transformation de la société congolaise en une société de l’information.",
+        "La stratégie s’organise autour de quatre piliers : Infrastructures, Contenus, Usages applicatifs, Gouvernance et Régulation."
+      ],
+      pillars: [
+        ["01", "Infrastructures", "Modernisation des infrastructures et extension de la couverture des télécommunications et de l’accès au Numérique."],
+        ["02", "Contenus", "Production, promotion, hébergement, sécurisation et sauvegarde des contenus numériques."],
+        ["03", "Usages applicatifs", "Transformation numérique des administrations, des entreprises et développement des services numériques."],
+        ["04", "Gouvernance & Régulation", "Cadre de gouvernance, régulation, confiance numérique et accompagnement de la transformation."]
+      ],
+      download: "https://presidence.cd/uploads/files/Presentation%20PNN_03_final.pdf",
+      downloadLabel: "Télécharger le PNN officiel"
+    },
+
+    "services/lutte-contre-la-pauvrete": {
+      badge: "Programme présidentiel",
+      title: "Programme Présidentiel Accéléré de Lutte Contre la Pauvreté et les Inégalités",
+      lead: "Le PPA-LCPI est une initiative présidentielle consacrée à l’amélioration des conditions de vie, en particulier dans les zones rurales et les communautés les plus vulnérables.",
+      source: "https://www.presidence.cd/services/2/programme_presidentiel_accelere_de_lutte_contre_la_pauvrete_et_les_inegalites",
+      sourceLabel: "Voir la source officielle",
+      prose: [
+        "La Présidence indique que le programme a été élaboré à l’initiative du Chef de l’État afin d’offrir une perspective de dignité, de promouvoir l’emploi, notamment pour les jeunes, et de lutter contre la précarité et l’exclusion.",
+        "Le programme vise à améliorer l’accès des populations rurales aux infrastructures et services socioéconomiques de base, à promouvoir des économies locales et rurales dynamiques et à renforcer les capacités de gestion du développement local."
+      ],
+      stats: [
+        ["63%", "Taux de pauvreté mentionné dans la présentation officielle du programme"],
+        ["76%", "Part de la population indiquée comme vivant en insécurité alimentaire"],
+        ["≈ 20 M", "Nombre de Congolais que le programme entend sortir de la précarité"]
+      ],
+      objectives: [
+        ["01", "Services essentiels", "Améliorer l’accès des populations rurales aux infrastructures et services socioéconomiques de base."],
+        ["02", "Économies locales", "Promouvoir des économies locales et rurales dynamiques."],
+        ["03", "Développement local", "Renforcer les capacités de gestion du développement local."]
+      ],
+      download: "https://www.presidence.cd/uploads/files/PPA-LCPI-Doc-web.pdf",
+      downloadLabel: "Télécharger le document officiel"
+    }
+  };
+
+  function renderProgramDetail(data) {
+    const actions = `
+      <div class="program-detail__actions">
+        ${data.download ? `<a class="program-detail__button program-detail__button--primary" href="${data.download}" target="_blank" rel="noopener">${data.downloadLabel}</a>` : ""}
+        <a class="program-detail__button program-detail__button--secondary" href="${data.source}" target="_blank" rel="noopener">${data.sourceLabel}</a>
+      </div>`;
+
+    const prose = data.prose?.length
+      ? `<div class="program-detail__prose">${data.prose.map(p => `<p>${p}</p>`).join("")}</div>`
+      : "";
+
+    const stats = data.stats?.length
+      ? `<section class="program-detail__stats" aria-label="Chiffres clés">
+          ${data.stats.map(([value,label]) => `
+            <article class="program-stat">
+              <strong>${value}</strong>
+              <span>${label}</span>
+            </article>`).join("")}
+        </section>`
+      : "";
+
+    const objectives = data.objectives?.length
+      ? `<section class="program-detail__section">
+          <div class="program-detail__section-head">
+            <span>Axes d’intervention</span>
+            <h2>Les priorités du programme</h2>
+          </div>
+          <div class="program-detail__cards">
+            ${data.objectives.map(([n,title,desc]) => `
+              <article class="program-focus-card">
+                <span class="program-focus-card__num">${n}</span>
+                <h3>${title}</h3>
+                <p>${desc}</p>
+              </article>`).join("")}
+          </div>
+        </section>`
+      : "";
+
+    const pillars = data.pillars?.length
+      ? `<section class="program-detail__section">
+          <div class="program-detail__section-head">
+            <span>Architecture stratégique</span>
+            <h2>Quatre piliers structurants</h2>
+          </div>
+          <div class="program-detail__cards program-detail__cards--four">
+            ${data.pillars.map(([n,title,desc]) => `
+              <article class="program-focus-card">
+                <span class="program-focus-card__num">${n}</span>
+                <h3>${title}</h3>
+                <p>${desc}</p>
+              </article>`).join("")}
+          </div>
+        </section>`
+      : "";
+
+    const sectors = data.sectors?.length
+      ? `<section class="program-detail__section">
+          <div class="program-detail__section-head">
+            <span>Programme présidentiel</span>
+            <h2>Les secteurs et leurs piliers</h2>
+          </div>
+          <div class="program-sector-list">
+            ${data.sectors.map((sector, sectorIndex) => `
+              <article class="program-sector">
+                <div class="program-sector__identity">
+                  <span class="program-sector__number">${sector.number}</span>
+                  <img src="${sector.image}" alt="" loading="lazy">
+                  <h3>${sector.title}</h3>
+                </div>
+                <ol class="program-sector__pillars" start="${sectorIndex === 0 ? 1 : sectorIndex === 1 ? 8 : sectorIndex === 2 ? 12 : 20}">
+                  ${sector.pillars.map(p => `<li>${p}</li>`).join("")}
+                </ol>
+              </article>`).join("")}
+          </div>
+        </section>`
+      : "";
+
+    return `<article class="program-detail">
+      <header class="program-detail__hero">
+        <div class="program-detail__hero-copy">
+          <span class="program-detail__badge">${data.badge}</span>
+          <h1>${data.title}</h1>
+          <p>${data.lead}</p>
+          ${actions}
+        </div>
+        <aside class="program-detail__vision">
+          <span>Vision</span>
+          <blockquote>${data.vision || "Une action publique structurée autour de priorités documentées."}</blockquote>
+        </aside>
+      </header>
+
+      ${prose}
+      ${stats}
+      ${pillars}
+      ${objectives}
+      ${sectors}
+    </article>`;
+  }
+
   function cardGrid(items) {
     return `<div class="inner-grid">${items.map(([t,d], i) => `
       <article class="info-card">
@@ -318,6 +525,30 @@
         <p>${d}</p>
         <span class="info-card__arrow" aria-hidden="true">↗</span>
       </article>`).join('')}</div>`;
+  }
+
+  function programOverview() {
+    const programmes = [
+      ['01', 'Programme présidentiel', 'Présentation des axes et priorités du programme présidentiel.', '/programme-presidentiel/'],
+      ['02', 'Plan national du numérique', 'Accéder aux ressources consacrées à la transformation numérique.', '/services/plan-national-du-numerique/'],
+      ['03', 'Lutte contre la pauvreté', 'Accéder aux informations relatives aux initiatives de lutte contre la pauvreté.', '/services/lutte-contre-la-pauvrete/']
+    ];
+
+    return `<section class="program-overview">
+      <div class="program-overview__head">
+        <span class="program-overview__eyebrow">Action présidentielle</span>
+        <h1>Programmes</h1>
+        <p>Accédez aux programmes et initiatives prioritaires présentés par la Présidence de la République.</p>
+      </div>
+      <div class="inner-grid">
+        ${programmes.map(([n,t,d,href]) => `<a class="info-card" href="${href}">
+          <span class="info-card__num">${n}</span>
+          <h2>${t}</h2>
+          <p>${d}</p>
+          <span class="info-card__arrow" aria-hidden="true">↗</span>
+        </a>`).join('')}
+      </div>
+    </section>`;
   }
 
   function searchBlock() {
@@ -340,7 +571,7 @@
     </section>`;
   }
 
-  const body = page.kind === 'search' ? searchBlock() : page.kind === 'contact' ? contactBlock() : cardGrid(cards[page.kind] || []);
+  const body = programDetails[key] ? renderProgramDetail(programDetails[key]) : key === 'programmes' ? programOverview() : page.kind === 'search' ? searchBlock() : page.kind === 'contact' ? contactBlock() : cardGrid(cards[page.kind] || []);
 
   target.className = 'inner-main';
   target.innerHTML = `

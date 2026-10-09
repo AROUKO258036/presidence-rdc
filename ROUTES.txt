@@ -4,7 +4,7 @@
 /conseil-de-ministres/  OK
 /presidence/  OK
 /president/le-president/  OK
-/president/premiere-dame/  OK
+/presidence/premiere-dame/  OK
 /le-cabinet/  OK
 /anciens-presidents/  OK
 /symboles-de-la-republique/  OK

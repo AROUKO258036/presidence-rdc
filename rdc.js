@@ -49,6 +49,121 @@
       return { item, trigger, panel, overItem: false, overPanel: false };
     });
 
+
+
+    /* MOBILE NAV V3 — generated from the existing desktop navigation */
+    const mainNav = header.querySelector('.presidential-nav');
+    if (mainNav && !header.querySelector('.mobile-nav-toggle')) {
+      const mobileToggle = document.createElement('button');
+      mobileToggle.type = 'button';
+      mobileToggle.className = 'mobile-nav-toggle';
+      mobileToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.innerHTML = '<span></span><span></span><span></span>';
+      mainNav.appendChild(mobileToggle);
+
+      const mobilePanel = document.createElement('div');
+      mobilePanel.className = 'mobile-nav-panel';
+      mobilePanel.setAttribute('aria-hidden', 'true');
+      const mobileInner = document.createElement('nav');
+      mobileInner.className = 'mobile-nav-panel__inner';
+      mobileInner.setAttribute('aria-label', 'Navigation mobile');
+      mobilePanel.appendChild(mobileInner);
+
+      const appendAnchor = (href, label, className = '') => {
+        if (!href || !label) return;
+        const a = document.createElement('a');
+        a.href = href;
+        a.textContent = label;
+        if (className) a.className = className;
+        mobileInner.appendChild(a);
+      };
+
+      const appendItem = (li) => {
+        const trigger = li.querySelector(':scope > .nav-trigger');
+        const direct = li.querySelector(':scope > .nav-link:not(.nav-trigger)');
+
+        if (direct) {
+          appendAnchor(direct.getAttribute('href'), direct.textContent.trim());
+          return;
+        }
+        if (!trigger) return;
+
+        const details = document.createElement('details');
+        const summary = document.createElement('summary');
+        summary.textContent = trigger.textContent.trim();
+        details.appendChild(summary);
+
+        const sub = document.createElement('div');
+        sub.className = 'mobile-nav-panel__sub';
+
+        const parentHref = trigger.getAttribute('href');
+        const dropdownOnly = trigger.dataset.dropdownOnly === 'true' || parentHref === '#';
+        if (!dropdownOnly && parentHref) {
+          const parent = document.createElement('a');
+          parent.href = parentHref;
+          parent.textContent = `Voir ${trigger.textContent.trim()}`;
+          parent.className = 'mobile-nav-panel__parent';
+          sub.appendChild(parent);
+        }
+
+        const entry = entries.find(value => value.trigger === trigger);
+        entry?.panel.querySelectorAll('a').forEach(source => {
+          const a = document.createElement('a');
+          a.href = source.getAttribute('href');
+          a.textContent = source.textContent.trim();
+          sub.appendChild(a);
+        });
+
+        details.appendChild(sub);
+        mobileInner.appendChild(details);
+      };
+
+      header.querySelectorAll('.nav-cluster--left > li').forEach(appendItem);
+      header.querySelectorAll('.nav-cluster--right > li').forEach(appendItem);
+
+      const searchLink = header.querySelector('.icon-link');
+      if (searchLink) appendAnchor(searchLink.getAttribute('href'), 'Rechercher');
+
+      header.appendChild(mobilePanel);
+
+      const closeMobile = () => {
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        mobilePanel.classList.remove('is-open');
+        mobilePanel.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('mobile-nav-open');
+      };
+
+      const openMobile = () => {
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        mobileToggle.setAttribute('aria-label', 'Fermer le menu');
+        mobilePanel.classList.add('is-open');
+        mobilePanel.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('mobile-nav-open');
+      };
+
+      mobileToggle.addEventListener('click', () => {
+        if (mobilePanel.classList.contains('is-open')) closeMobile();
+        else openMobile();
+      });
+
+      mobilePanel.addEventListener('click', (event) => {
+        if (event.target.closest('a')) closeMobile();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && mobilePanel.classList.contains('is-open')) {
+          closeMobile();
+          mobileToggle.focus({ preventScroll: true });
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (innerWidth > 920 && mobilePanel.classList.contains('is-open')) closeMobile();
+      });
+    }
+
     let active = null;
     let closeTimer = null;
     const cancelClose = () => { if (closeTimer) clearTimeout(closeTimer); closeTimer = null; };
