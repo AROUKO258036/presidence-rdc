@@ -38,6 +38,12 @@
   const header = document.querySelector('[data-header]');
   const viewport = document.querySelector('[data-nav-viewport]');
   if (header) {
+    /* Programmes is intentionally a dropdown-only parent everywhere, including headers injected by older shells. */
+    header.querySelectorAll('#trigger-programmes').forEach(trigger => {
+      trigger.dataset.dropdownOnly = 'true';
+      trigger.setAttribute('href', '#');
+    });
+
     const entries = [...header.querySelectorAll('[data-dropdown]')].map((item, idx) => {
       const trigger = item.querySelector('.nav-trigger');
       const panel = item.querySelector('.dropdown');

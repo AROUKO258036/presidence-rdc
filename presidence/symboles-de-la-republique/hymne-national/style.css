@@ -1,0 +1,67 @@
+/* Hymne national — disposition dédiée */
+
+.hymn-page h1{
+  max-width:1120px;
+}
+
+.hymn-layout{
+  display:grid;
+  grid-template-columns:minmax(320px,430px) minmax(0,1fr);
+  gap:46px;
+  align-items:start;
+}
+
+.hymn-visual{
+  margin:0;
+  width:100%;
+  overflow:hidden;
+  border:1px solid #dce4ec;
+  background:#f6f8fb;
+}
+
+.hymn-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.hymn-text{
+  min-width:0;
+  color:#162a42;
+  font:400 clamp(1.02rem,1.22vw,1.2rem)/1.78 Arial,sans-serif;
+}
+
+.hymn-text p{
+  margin:0 0 26px;
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+.hymn-text p:last-child{
+  margin-bottom:0;
+}
+
+@media(max-width:760px){
+  .hymn-layout{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .hymn-visual{
+    width:min(100%,430px);
+    margin:0 auto;
+  }
+
+  .hymn-text{
+    font-size:1rem;
+    line-height:1.72;
+  }
+
+  /* Le texte reste justifié sur mobile comme demandé. */
+  .hymn-text p{
+    text-align:justify;
+    text-justify:inter-word;
+    margin-bottom:24px;
+  }
+}

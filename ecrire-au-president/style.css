@@ -1,0 +1,140 @@
+/*
+  Correctif mobile — Écrire au Président
+  Scope volontairement limité à cette page.
+  Le rendu desktop existant n'est pas modifié.
+*/
+
+@media (max-width: 920px) {
+  html,
+  body[data-page="ecrire-au-president"] {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body[data-page="ecrire-au-president"] .inner-main {
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  body[data-page="ecrire-au-president"] .inner-content {
+    width: min(100% - 28px, 680px);
+    margin-inline: auto;
+    padding: 34px 0 64px;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-panel {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form {
+    width: 100%;
+    margin: 0;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+    border: 1px solid rgba(21, 54, 95, .10);
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 16px 42px rgba(3, 22, 44, .07);
+  }
+
+  body[data-page="ecrire-au-president"] .field,
+  body[data-page="ecrire-au-president"] .field--full {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+    gap: 7px;
+  }
+
+  body[data-page="ecrire-au-president"] .field label {
+    margin: 0;
+    color: var(--navy);
+    font-size: .76rem;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form input,
+  body[data-page="ecrire-au-president"] .contact-form select,
+  body[data-page="ecrire-au-president"] .contact-form textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid #d5dee8;
+    border-radius: 12px;
+    background: #fff;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.4;
+    box-sizing: border-box;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form input,
+  body[data-page="ecrire-au-president"] .contact-form select {
+    min-height: 52px;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form select {
+    padding-right: 42px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form textarea {
+    min-height: 190px;
+    resize: vertical;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    margin: 2px 0 0;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--yellow);
+    color: var(--navy);
+    font-size: .86rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    white-space: normal;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 480px) {
+  body[data-page="ecrire-au-president"] .inner-content {
+    width: min(100% - 22px, 680px);
+    padding: 26px 0 50px;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form {
+    padding: 17px 15px;
+    gap: 15px;
+    border-radius: 18px;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form textarea {
+    min-height: 170px;
+  }
+
+  body[data-page="ecrire-au-president"] .contact-form-submit {
+    min-height: 50px;
+    font-size: .80rem;
+  }
+}

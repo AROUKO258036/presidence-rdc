@@ -1,0 +1,167 @@
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:#fff}
+
+.annuaire-page{
+  padding:0 34px 74px;
+  background:#fff;
+  color:#111;
+}
+
+.annuaire-shell{
+  width:min(1530px,100%);
+  margin:0 auto;
+}
+
+.annuaire-back{
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  margin:0 0 54px;
+  color:#111;
+  text-decoration:none;
+  font:400 1.05rem/1 Arial,sans-serif;
+}
+
+.annuaire-back span{
+  font-size:2rem;
+  line-height:1;
+}
+
+.annuaire-head{
+  margin:0 0 42px;
+  text-align:center;
+}
+
+.annuaire-head h1{
+  margin:0;
+  color:#000;
+  font:700 clamp(2rem,3vw,3.15rem)/1.08 Arial,sans-serif;
+  letter-spacing:.01em;
+}
+
+/* Aucune ligne drapeau sous le titre */
+.annuaire-layout{
+  display:grid;
+  grid-template-columns:minmax(340px,450px) minmax(0,1fr);
+  gap:44px;
+  align-items:start;
+}
+
+.annuaire-cover{
+  margin:0;
+  width:100%;
+}
+
+.annuaire-cover img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:top center;
+}
+
+.annuaire-content{
+  min-width:0;
+}
+
+.annuaire-prose{
+  color:#111;
+  font:400 clamp(1rem,1.35vw,1.25rem)/1.68 Arial,sans-serif;
+}
+
+.annuaire-prose p{
+  margin:0 0 30px;
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+.annuaire-download{
+  margin-top:34px;
+  display:grid;
+  justify-items:center;
+  gap:16px;
+  color:#111;
+  font-family:Arial,sans-serif;
+}
+
+.annuaire-download > span{
+  font-size:.94rem;
+  font-weight:700;
+}
+
+.annuaire-download a{
+  display:grid;
+  place-items:center;
+  width:58px;
+  height:58px;
+  border:1.5px solid #0784ff;
+  border-radius:50%;
+  color:#0784ff;
+  text-decoration:none;
+  font-size:1rem;
+  transition:.2s ease;
+}
+
+.annuaire-download a:hover,
+.annuaire-download a:focus-visible{
+  background:#0784ff;
+  color:#fff;
+}
+
+@media(max-width:900px){
+  .annuaire-page{
+    padding:0 24px 64px;
+  }
+
+  .annuaire-back{
+    margin-bottom:40px;
+  }
+
+  .annuaire-layout{
+    grid-template-columns:minmax(280px,360px) minmax(0,1fr);
+    gap:30px;
+  }
+
+  .annuaire-prose{
+    font-size:1rem;
+    line-height:1.65;
+  }
+}
+
+@media(max-width:700px){
+  .annuaire-page{
+    padding:0 18px 58px;
+  }
+
+  .annuaire-back{
+    margin-bottom:30px;
+  }
+
+  .annuaire-head{
+    margin-bottom:30px;
+  }
+
+  .annuaire-head h1{
+    font-size:clamp(1.8rem,8vw,2.55rem);
+  }
+
+  .annuaire-layout{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .annuaire-cover{
+    width:min(100%,420px);
+    margin:0 auto;
+  }
+
+  .annuaire-prose p{
+    text-align:left;
+    margin-bottom:24px;
+  }
+
+  .annuaire-download{
+    margin-top:28px;
+  }
+}

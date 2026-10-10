@@ -1,0 +1,168 @@
+*{box-sizing:border-box}
+body{margin:0;background:#fff}
+
+.ppa-service{
+  padding:58px 34px 84px;
+  background:#fff;
+}
+
+.ppa-service .service-detail__inner{
+  width:min(1240px,100%);
+  margin:0 auto;
+}
+
+.ppa-service h2{
+  margin:0 0 42px;
+  max-width:1200px;
+  color:#12243b;
+  font:800 clamp(1.45rem,2.1vw,2.15rem)/1.08 Arial,sans-serif;
+  letter-spacing:.025em;
+  text-transform:uppercase;
+}
+
+.ppa-service__content{
+  display:grid;
+  grid-template-columns:minmax(330px,430px) minmax(0,1fr);
+  gap:44px;
+  align-items:start;
+}
+
+.ppa-service__visual{
+  width:100%;
+  min-height:590px;
+  overflow:hidden;
+  border:1px solid rgba(21,54,95,.10);
+  background:#f4f6f8;
+}
+
+.ppa-service__pdf{
+  display:block;
+  width:100%;
+  height:590px;
+  border:0;
+  background:#f4f6f8;
+}
+
+.ppa-service__prose{
+  max-width:none;
+  color:#162a42;
+  font:400 clamp(1rem,1.2vw,1.2rem)/1.75 Arial,sans-serif;
+}
+
+.ppa-service__prose p{
+  margin:0 0 28px;
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+.ppa-service__prose p:last-child{
+  margin-bottom:0;
+}
+
+.ppa-service .service-detail__links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:42px;
+  padding-top:24px;
+  border-top:1px solid rgba(21,54,95,.10);
+}
+
+.ppa-service .service-detail__links a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:0 18px;
+  border:1px solid #15365f;
+  border-radius:999px;
+  color:#15365f;
+  text-decoration:none;
+  font:700 .8rem/1 Arial,sans-serif;
+}
+
+.ppa-service .service-detail__links a:hover,
+.ppa-service .service-detail__links a:focus-visible{
+  background:#15365f;
+  color:#fff;
+}
+
+@media(max-width:900px){
+  .ppa-service{
+    padding:44px 24px 72px;
+  }
+
+  .ppa-service h2{
+    margin-bottom:34px;
+  }
+
+  .ppa-service__content{
+    grid-template-columns:minmax(280px,360px) minmax(0,1fr);
+    gap:30px;
+  }
+
+  .ppa-service__visual,
+  .ppa-service__pdf{
+    min-height:500px;
+    height:500px;
+  }
+
+  .ppa-service__prose{
+    font-size:1rem;
+    line-height:1.68;
+  }
+}
+
+@media(max-width:700px){
+  html,body{
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  .ppa-service{
+    padding:38px 18px 64px;
+  }
+
+  .ppa-service h2{
+    margin-bottom:30px;
+    font-size:clamp(1.3rem,6vw,1.75rem);
+  }
+
+  .ppa-service__content{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .ppa-service__visual{
+    width:min(100%,430px);
+    min-height:520px;
+    margin:0 auto;
+  }
+
+  .ppa-service__pdf{
+    height:520px;
+  }
+
+  .ppa-service__prose{
+    width:100%;
+    font-size:1rem;
+  }
+
+  .ppa-service__prose p{
+    text-align:left;
+    margin-bottom:24px;
+  }
+
+  .ppa-service .service-detail__links{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:34px;
+  }
+
+  .ppa-service .service-detail__links a{
+    width:100%;
+    min-height:48px;
+    justify-content:center;
+    text-align:center;
+  }
+}

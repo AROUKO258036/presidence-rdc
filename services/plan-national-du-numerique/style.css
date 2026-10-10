@@ -1,0 +1,152 @@
+*{box-sizing:border-box}
+body{margin:0;background:#fff}
+
+.pnn-service{
+  padding:58px 34px 84px;
+  background:#fff;
+}
+
+.pnn-service .service-detail__inner{
+  width:min(1240px,100%);
+  margin:0 auto;
+}
+
+.pnn-service h2{
+  margin:0 0 42px;
+  color:#12243b;
+  font:800 clamp(1.75rem,2.8vw,3rem)/1.02 Arial,sans-serif;
+  letter-spacing:.035em;
+  text-transform:uppercase;
+}
+
+.pnn-service__content{
+  display:grid;
+  grid-template-columns:minmax(300px,430px) minmax(0,1fr);
+  gap:44px;
+  align-items:start;
+}
+
+.pnn-service__visual{
+  width:100%;
+  margin:0;
+  display:block;
+}
+
+.pnn-service__visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+}
+
+.pnn-service__prose{
+  max-width:none;
+  color:#162a42;
+  font:400 clamp(1rem,1.2vw,1.2rem)/1.75 Arial,sans-serif;
+}
+
+.pnn-service__prose p{
+  margin:0 0 28px;
+  text-align:justify;
+  text-justify:inter-word;
+}
+
+.pnn-service__prose p:last-child{
+  margin-bottom:0;
+}
+
+.pnn-service .service-detail__links{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:42px;
+  padding-top:24px;
+  border-top:1px solid rgba(21,54,95,.10);
+}
+
+.pnn-service .service-detail__links a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:0 18px;
+  border:1px solid #15365f;
+  border-radius:999px;
+  color:#15365f;
+  text-decoration:none;
+  font:700 .8rem/1 Arial,sans-serif;
+}
+
+.pnn-service .service-detail__links a:hover,
+.pnn-service .service-detail__links a:focus-visible{
+  background:#15365f;
+  color:#fff;
+}
+
+@media(max-width:900px){
+  .pnn-service{
+    padding:44px 24px 72px;
+  }
+
+  .pnn-service h2{
+    margin-bottom:34px;
+  }
+
+  .pnn-service__content{
+    grid-template-columns:minmax(260px,360px) minmax(0,1fr);
+    gap:30px;
+  }
+
+  .pnn-service__prose{
+    font-size:1rem;
+    line-height:1.68;
+  }
+}
+
+@media(max-width:700px){
+  html,body{max-width:100%;overflow-x:hidden}
+
+  .pnn-service{
+    padding:38px 18px 64px;
+  }
+
+  .pnn-service h2{
+    margin-bottom:30px;
+    font-size:clamp(1.55rem,8vw,2.25rem);
+    line-height:1.06;
+  }
+
+  .pnn-service__content{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .pnn-service__visual{
+    width:min(100%,460px);
+    margin:0 auto;
+  }
+
+  .pnn-service__prose{
+    width:100%;
+    font-size:1rem;
+  }
+
+  .pnn-service__prose p{
+    text-align:left;
+    margin-bottom:24px;
+  }
+
+  .pnn-service .service-detail__links{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:34px;
+  }
+
+  .pnn-service .service-detail__links a{
+    width:100%;
+    min-height:48px;
+    justify-content:center;
+    text-align:center;
+  }
+}
