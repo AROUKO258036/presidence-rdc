@@ -1,0 +1,195 @@
+/* VRAI FIX STICKY DATES
+   LPDA + Discours + Ordonnances
+   Important: sticky is applied to the grid column/wrapper, not to a child
+   constrained by a short parent.
+*/
+
+/* overflow-x:hidden can create a scroll container and break position:sticky.
+   clip prevents horizontal overflow without becoming a scroll container. */
+html,
+body{
+  overflow-x:clip !important;
+}
+
+/* =========================================================
+   LPDA
+   ========================================================= */
+.lpda-page,
+.lpda-shell,
+.lpda-layout,
+.lpda-content{
+  overflow:visible !important;
+}
+
+/* This whole grid item is the sticky element. It is constrained by
+   .lpda-layout (the tall content column), so it stays visible while
+   publications on the right continue scrolling. */
+.lpda-aside{
+  position:sticky !important;
+  top:118px !important;
+  align-self:start !important;
+  height:max-content !important;
+  overflow:visible !important;
+  z-index:20;
+}
+
+/* Remove nested sticky from earlier patches. */
+.lpda-years{
+  position:static !important;
+  top:auto !important;
+  width:100% !important;
+  max-height:calc(100vh - 150px) !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  margin-top:14px;
+  padding:14px;
+  border:1px solid #d7e0e9;
+  background:#fff;
+  scrollbar-gutter:stable;
+}
+
+.lpda-years a{
+  display:flex !important;
+  align-items:center !important;
+  width:100% !important;
+  min-height:54px !important;
+  margin:0 0 10px !important;
+  padding:0 16px !important;
+  border:1px solid #d7e0e9 !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  color:#15365f !important;
+  text-decoration:none !important;
+  font:800 .95rem/1.2 Arial,sans-serif !important;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.lpda-years a:last-child{
+  margin-bottom:0 !important;
+}
+
+.lpda-years a:hover,
+.lpda-years a:focus-visible{
+  transform:translateX(3px);
+  border-color:#15365f !important;
+  background:#f7faff !important;
+  box-shadow:0 7px 16px rgba(18,36,59,.06);
+}
+
+/* =========================================================
+   DISCOURS + ORDONNANCES
+   ========================================================= */
+.resource-doc-page,
+.resource-doc-section,
+.resource-doc-container,
+.resource-doc-layout,
+.resource-doc-content{
+  overflow:visible !important;
+}
+
+/* The aside itself must be sticky. Earlier versions made only
+   .resource-doc-years sticky, but its parent had the same short height,
+   so both columns still moved together. */
+.resource-doc-layout > aside{
+  position:sticky !important;
+  top:118px !important;
+  align-self:start !important;
+  height:max-content !important;
+  overflow:visible !important;
+  z-index:20;
+}
+
+.resource-doc-years{
+  position:static !important;
+  top:auto !important;
+  width:200px !important;
+  max-height:calc(100vh - 150px) !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  margin-top:14px;
+  padding:14px;
+  border:1px solid #d7e0e9;
+  background:#fff;
+  scrollbar-gutter:stable;
+}
+
+.resource-doc-years nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.resource-doc-years a{
+  display:flex !important;
+  align-items:center !important;
+  width:100% !important;
+  min-height:54px !important;
+  margin:0 !important;
+  padding:0 16px !important;
+  border:1px solid #d7e0e9 !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  color:#15365f !important;
+  text-decoration:none !important;
+  font:800 .95rem/1.2 Arial,sans-serif !important;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.resource-doc-years a:hover,
+.resource-doc-years a:focus-visible{
+  transform:translateX(3px);
+  border-color:#15365f !important;
+  background:#f7faff !important;
+  box-shadow:0 7px 16px rgba(18,36,59,.06);
+}
+
+.lpda-group,
+.resource-doc-group{
+  scroll-margin-top:130px;
+}
+
+/* Mobile: date menu remains visible too, but compact. */
+@media(max-width:700px){
+  .lpda-layout,
+  .resource-doc-layout{
+    display:block !important;
+    overflow:visible !important;
+  }
+
+  .lpda-aside,
+  .resource-doc-layout > aside{
+    position:sticky !important;
+    top:72px !important;
+    z-index:40;
+    width:100% !important;
+    margin:0 0 24px !important;
+    background:#fff;
+  }
+
+  /* Hide LPDA cover on mobile so only dates remain sticky. */
+  .lpda-cover{
+    display:none !important;
+  }
+
+  .lpda-years,
+  .resource-doc-years{
+    width:100% !important;
+    max-height:180px !important;
+    margin:0 !important;
+    padding:12px !important;
+    background:rgba(255,255,255,.98) !important;
+    box-shadow:0 10px 22px rgba(18,36,59,.08);
+  }
+
+  .lpda-years a,
+  .resource-doc-years a{
+    min-height:50px !important;
+    padding:0 14px !important;
+    font-size:.92rem !important;
+  }
+
+  .lpda-group,
+  .resource-doc-group{
+    scroll-margin-top:280px;
+  }
+}

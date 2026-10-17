@@ -1,0 +1,16 @@
+PATCH — Programmes + Ressources + Événements
+
+Fichiers principaux modifiés :
+- page-renderer.js : nouveaux contenus/layouts Programmes, Ressources et Événements
+- rdc.css : styles V2 responsive, ajoutés sans écraser les correctifs existants
+- rdc.js : Programmes reste dropdown-only partout, même avec un ancien shell injecté
+
+Redirections de compatibilité :
+- programmes/programme-presidentiel/ -> /programme-presidentiel/
+- programmes/numerique/ -> /services/plan-national-du-numerique/
+- programmes/lutte-contre-pauvrete/ -> /services/lutte-contre-la-pauvrete/
+- ressources/documents/ -> /documents/
+- ressources/archives/ -> /ressources/
+
+Ce patch NE contient PAS la vidéo, site-shell.js, les images locales ni les autres pages du projet.
+Copiez le contenu du ZIP à la racine du projet RDC en remplaçant uniquement les fichiers présents dans ce patch.

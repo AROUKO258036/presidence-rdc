@@ -1,0 +1,16 @@
+CORRECTIF FLECHES PROPRES
+
+Le probleme visible venait du chevauchement entre l'ancien symbole de fleche et le trait CSS.
+
+Ce patch :
+- supprime le rendu de l'ancien symbole ;
+- dessine une seule fleche CSS propre ;
+- garde une longueur courte ;
+- conserve le petit mouvement au survol ;
+- applique la correction a LPDA, Discours et Ordonnances.
+
+INSTALLATION
+1. Extraire ce ZIP a la racine du projet RDC.
+2. Dans PowerShell :
+   powershell -ExecutionPolicy Bypass -File .\APPLIQUER-FLECHES-PROPRES.ps1
+3. Recharger avec Ctrl + F5.

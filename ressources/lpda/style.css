@@ -24,7 +24,7 @@ body{margin:0;background:#fff;color:#12243b}
 
 .lpda-layout{
   display:grid;
-  grid-template-columns:320px minmax(0,1fr);
+  grid-template-columns: 170px minmax(0,1fr);
   gap:44px;
   align-items:start;
 }
@@ -82,11 +82,12 @@ body{margin:0;background:#fff;color:#12243b}
 }
 
 .lpda-years{
-  width:100%;
+  width:200px;
   margin-top:14px;
   padding:14px;
   border:1px solid #d7e0e9;
   background:#fff;
+
 }
 
 .lpda-years__label{
@@ -135,6 +136,7 @@ body{margin:0;background:#fff;color:#12243b}
   margin-bottom:36px;
   padding-bottom:28px;
   border-bottom:1px solid #d7dee6;
+  
 }
 
 .lpda-intro p{
@@ -152,7 +154,7 @@ body{margin:0;background:#fff;color:#12243b}
 
 .lpda-group h2{
   margin:0 0 10px;
-  color:#12243b;
+  color: #ce1021;
   font:800 1rem/1.2 Arial,sans-serif;
   letter-spacing:.06em;
   text-transform:uppercase;
@@ -316,3 +318,898 @@ body{margin:0;background:#fff;color:#12243b}
     line-height:1.35;
   }
 }
+
+/* NOVATRIX: STICKY DATES START */
+
+/* LPDA */
+.lpda-years{
+  position:sticky !important;
+  top:110px;
+  z-index:12;
+  max-height:calc(100vh - 135px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+  background:#fff;
+}
+
+/* Discours + Ordonnances */
+.resource-doc-years{
+  position:sticky !important;
+  top:110px;
+  z-index:12;
+  max-height:calc(100vh - 135px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+  background:#fff;
+}
+
+@media (max-width:760px){
+  .lpda-years,
+  .resource-doc-years{
+    position:sticky !important;
+    top:76px;
+    z-index:20;
+    width:100% !important;
+    max-height:170px;
+    overflow-y:auto;
+    box-sizing:border-box;
+    background:#fff;
+    box-shadow:0 8px 20px rgba(18,36,59,.08);
+  }
+}
+
+/* NOVATRIX: STICKY DATES END */
+
+/* NOVATRIX: SERVICE ROW HOVER START */
+
+/* Same hover movement as the Services list */
+.lpda-doc,
+.resource-doc-row{
+  transition:
+    background .2s ease,
+    padding-left .2s ease,
+    padding-right .2s ease;
+}
+
+.lpda-doc:hover,
+.lpda-doc:focus-visible,
+.resource-doc-row:hover,
+.resource-doc-row:focus-visible{
+  background:#f5f8fb;
+  padding-left:18px;
+  padding-right:18px;
+}
+
+/* Keep the arrow motion already used on resource rows */
+.lpda-doc__arrow,
+.resource-doc-row__arrow{
+  transition:transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.lpda-doc:hover .lpda-doc__arrow,
+.lpda-doc:focus-visible .lpda-doc__arrow{
+  transform:translateX(4px);
+}
+
+@media (max-width:760px){
+  .lpda-doc:hover,
+  .lpda-doc:focus-visible,
+  .resource-doc-row:hover,
+  .resource-doc-row:focus-visible{
+    padding-left:10px;
+    padding-right:10px;
+  }
+}
+
+/* NOVATRIX: SERVICE ROW HOVER END */
+
+/* RDC DATE CARDS STICKY START */
+
+.lpda-layout,
+.resource-doc-layout,
+.lpda-content,
+.resource-doc-content,
+.lpda-section,
+.resource-doc-section,
+.lpda-page,
+.resource-doc-page{
+  overflow:visible !important;
+}
+
+/* COLONNE DES DATES : ELLE RESTE FIXE */
+.lpda-years,
+.resource-doc-years{
+  position:sticky !important;
+  top:118px !important;
+  align-self:start !important;
+
+  width:200px;
+  max-height:calc(100vh - 145px);
+
+  margin-top:14px;
+  padding:14px;
+
+  border:1px solid #d7e0e9;
+  background:#fff;
+
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  z-index:20;
+}
+
+/* LISTE DES DATES */
+.lpda-years nav,
+.lpda-years .lpda-years__nav,
+.lpda-years .lpda-years-list,
+.resource-doc-years nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* CHAQUE DATE DEVIENT UNE CARD */
+.lpda-years a,
+.lpda-years .lpda-year-card,
+.resource-doc-years a{
+  display:flex;
+  align-items:center;
+
+  width:100%;
+  min-height:54px;
+
+  padding:0 16px !important;
+  margin:0 !important;
+
+  border:1px solid #d7e0e9 !important;
+  border-radius:14px;
+
+  background:#fff;
+  color:#15365f !important;
+
+  text-decoration:none !important;
+
+  font:800 .95rem/1.2 Arial,sans-serif;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+/* ANIMATION AU SURVOL */
+.lpda-years a:hover,
+.lpda-years a:focus-visible,
+.lpda-years a.is-active,
+.resource-doc-years a:hover,
+.resource-doc-years a:focus-visible,
+.resource-doc-years a.is-active{
+  transform:translateX(3px);
+
+  background:#f7faff;
+
+  border-color:#15365f !important;
+
+  box-shadow:
+    0 7px 16px rgba(18,36,59,.06);
+}
+
+.lpda-group,
+.resource-doc-group{
+  scroll-margin-top:125px;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+
+  .lpda-years,
+  .resource-doc-years{
+    position:sticky !important;
+
+    top:74px !important;
+
+    width:100% !important;
+
+    max-height:190px;
+
+    margin:0 0 24px !important;
+    padding:12px;
+
+    background:#fff;
+
+    box-shadow:
+      0 10px 22px rgba(18,36,59,.08);
+
+    z-index:30;
+  }
+
+  .lpda-years a,
+  .lpda-years .lpda-year-card,
+  .resource-doc-years a{
+    min-height:50px;
+
+    padding:0 14px !important;
+
+    font-size:.92rem;
+  }
+
+  .lpda-group,
+  .resource-doc-group{
+    scroll-margin-top:285px;
+  }
+}
+
+/* RDC DATE CARDS STICKY END */
+
+/* VRAI FIX STICKY DATES START */
+/* VRAI FIX STICKY DATES
+   LPDA + Discours + Ordonnances
+   Important: sticky is applied to the grid column/wrapper, not to a child
+   constrained by a short parent.
+*/
+
+/* overflow-x:hidden can create a scroll container and break position:sticky.
+   clip prevents horizontal overflow without becoming a scroll container. */
+html,
+body{
+  overflow-x:clip !important;
+}
+
+/* =========================================================
+   LPDA
+   ========================================================= */
+.lpda-page,
+.lpda-shell,
+.lpda-layout,
+.lpda-content{
+  overflow:visible !important;
+}
+
+/* This whole grid item is the sticky element. It is constrained by
+   .lpda-layout (the tall content column), so it stays visible while
+   publications on the right continue scrolling. */
+.lpda-aside{
+  position:sticky !important;
+  top:118px !important;
+  align-self:start !important;
+  height:max-content !important;
+  overflow:visible !important;
+  z-index:20;
+}
+
+/* Remove nested sticky from earlier patches. */
+.lpda-years{
+  position:static !important;
+  top:auto !important;
+  width:100% !important;
+  max-height:calc(100vh - 150px) !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  margin-top:14px;
+  padding:14px;
+  border:1px solid #d7e0e9;
+  background:#fff;
+  scrollbar-gutter:stable;
+}
+
+.lpda-years a{
+  display:flex !important;
+  align-items:center !important;
+  width:100% !important;
+  min-height:54px !important;
+  margin:0 0 10px !important;
+  padding:0 16px !important;
+  border:1px solid #d7e0e9 !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  color:#15365f !important;
+  text-decoration:none !important;
+  font:800 .95rem/1.2 Arial,sans-serif !important;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.lpda-years a:last-child{
+  margin-bottom:0 !important;
+}
+
+.lpda-years a:hover,
+.lpda-years a:focus-visible{
+  transform:translateX(3px);
+  border-color:#15365f !important;
+  background:#f7faff !important;
+  box-shadow:0 7px 16px rgba(18,36,59,.06);
+}
+
+/* =========================================================
+   DISCOURS + ORDONNANCES
+   ========================================================= */
+.resource-doc-page,
+.resource-doc-section,
+.resource-doc-container,
+.resource-doc-layout,
+.resource-doc-content{
+  overflow:visible !important;
+}
+
+/* The aside itself must be sticky. Earlier versions made only
+   .resource-doc-years sticky, but its parent had the same short height,
+   so both columns still moved together. */
+.resource-doc-layout > aside{
+  position:sticky !important;
+  top:118px !important;
+  align-self:start !important;
+  height:max-content !important;
+  overflow:visible !important;
+  z-index:20;
+}
+
+.resource-doc-years{
+  position:static !important;
+  top:auto !important;
+  width:200px !important;
+  max-height:calc(100vh - 150px) !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  margin-top:14px;
+  padding:14px;
+  border:1px solid #d7e0e9;
+  background:#fff;
+  scrollbar-gutter:stable;
+}
+
+.resource-doc-years nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.resource-doc-years a{
+  display:flex !important;
+  align-items:center !important;
+  width:100% !important;
+  min-height:54px !important;
+  margin:0 !important;
+  padding:0 16px !important;
+  border:1px solid #d7e0e9 !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  color:#15365f !important;
+  text-decoration:none !important;
+  font:800 .95rem/1.2 Arial,sans-serif !important;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.resource-doc-years a:hover,
+.resource-doc-years a:focus-visible{
+  transform:translateX(3px);
+  border-color:#15365f !important;
+  background:#f7faff !important;
+  box-shadow:0 7px 16px rgba(18,36,59,.06);
+}
+
+.lpda-group,
+.resource-doc-group{
+  scroll-margin-top:130px;
+}
+
+/* Mobile: date menu remains visible too, but compact. */
+@media(max-width:700px){
+  .lpda-layout,
+  .resource-doc-layout{
+    display:block !important;
+    overflow:visible !important;
+  }
+
+  .lpda-aside,
+  .resource-doc-layout > aside{
+    position:sticky !important;
+    top:72px !important;
+    z-index:40;
+    width:100% !important;
+    margin:0 0 24px !important;
+    background:#fff;
+  }
+
+  /* Hide LPDA cover on mobile so only dates remain sticky. */
+  .lpda-cover{
+    display:none !important;
+  }
+
+  .lpda-years,
+  .resource-doc-years{
+    width:100% !important;
+    max-height:180px !important;
+    margin:0 !important;
+    padding:12px !important;
+    background:rgba(255,255,255,.98) !important;
+    box-shadow:0 10px 22px rgba(18,36,59,.08);
+  }
+
+  .lpda-years a,
+  .resource-doc-years a{
+    min-height:50px !important;
+    padding:0 14px !important;
+    font-size:.92rem !important;
+  }
+
+  .lpda-group,
+  .resource-doc-group{
+    scroll-margin-top:280px;
+  }
+}
+/* VRAI FIX STICKY DATES END */
+
+/* RDC STICKY DATE PANEL COMPACT START */
+
+.lpda-layout > aside:first-child,
+.resource-doc-layout > aside:first-child{
+  position:sticky !important;
+  top:118px !important;
+  align-self:start !important;
+  z-index:20;
+  width:260px !important;
+  min-width:260px !important;
+  max-width:260px !important;
+}
+
+.lpda-years,
+.resource-doc-years{
+  position:static !important;
+  top:auto !important;
+  width:260px !important;
+  min-width:260px !important;
+  max-width:260px !important;
+  max-height:365px !important;
+  margin:0 !important;
+  padding:14px !important;
+  border:1px solid #d7e0e9 !important;
+  background:#fff !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  box-sizing:border-box !important;
+  scrollbar-gutter:stable;
+}
+
+.lpda-years nav,
+.lpda-years .lpda-years__nav,
+.lpda-years .lpda-years-list,
+.resource-doc-years nav{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:10px !important;
+  width:100% !important;
+  min-width:0 !important;
+}
+
+.lpda-years a,
+.lpda-years .lpda-year-card,
+.resource-doc-years a{
+  display:flex !important;
+  align-items:center !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:54px !important;
+  padding:0 16px !important;
+  margin:0 !important;
+  border:1px solid #d7e0e9 !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  color:#15365f !important;
+  text-decoration:none !important;
+  font:800 .92rem/1.2 Arial,sans-serif !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  box-sizing:border-box !important;
+}
+
+.lpda-years a:hover,
+.lpda-years a:focus-visible,
+.resource-doc-years a:hover,
+.resource-doc-years a:focus-visible{
+  transform:none !important;
+  background:#f7faff !important;
+  border-color:#15365f !important;
+  box-shadow:0 7px 16px rgba(18,36,59,.06) !important;
+}
+
+.lpda-layout{
+  grid-template-columns:260px minmax(0,1fr) !important;
+  gap:44px !important;
+  align-items:start !important;
+  overflow:visible !important;
+}
+
+.resource-doc-layout{
+  grid-template-columns:260px minmax(0,1fr) !important;
+  gap:44px !important;
+  align-items:start !important;
+  overflow:visible !important;
+}
+
+.lpda-content,
+.resource-doc-content{
+  min-width:0 !important;
+  overflow:visible !important;
+}
+
+@media(max-width:900px){
+  .lpda-layout,
+  .resource-doc-layout{
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+  }
+
+  .lpda-layout > aside:first-child,
+  .resource-doc-layout > aside:first-child{
+    position:static !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+  }
+
+  .lpda-years,
+  .resource-doc-years{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    max-height:250px !important;
+  }
+
+  .lpda-years a,
+  .lpda-years .lpda-year-card,
+  .resource-doc-years a{
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+  }
+}
+
+/* RDC STICKY DATE PANEL COMPACT END */
+
+/* RDC ARROWS LIKE SERVICES START */
+
+/* Fleches identiques a la liste Services :
+   - aucune pastille / aucun cercle
+   - trait horizontal + pointe
+   - bleu marine
+   - leger mouvement au survol
+*/
+
+.resource-doc-row__arrow,
+.lpda-doc__arrow{
+  position:relative !important;
+  display:block !important;
+  flex:0 0 46px !important;
+  width:46px !important;
+  min-width:46px !important;
+  height:24px !important;
+  padding:0 !important;
+  margin:0 !important;
+
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+
+  color:transparent !important;
+  font-size:0 !important;
+
+  transform:none !important;
+  transition:transform .22s ease !important;
+}
+
+/* ligne de la fleche */
+.resource-doc-row__arrow::before,
+.lpda-doc__arrow::before{
+  content:"" !important;
+  position:absolute !important;
+  left:2px !important;
+  top:11px !important;
+  width:38px !important;
+  height:2px !important;
+  background:#0b2d55 !important;
+  border-radius:0 !important;
+}
+
+/* pointe de la fleche */
+.resource-doc-row__arrow::after,
+.lpda-doc__arrow::after{
+  content:"" !important;
+  position:absolute !important;
+  right:5px !important;
+  top:7px !important;
+  width:8px !important;
+  height:8px !important;
+  border-top:2px solid #0b2d55 !important;
+  border-right:2px solid #0b2d55 !important;
+  transform:rotate(45deg) !important;
+  background:transparent !important;
+}
+
+/* Au survol : meme principe que Services, la fleche avance seulement */
+.resource-doc-row:hover .resource-doc-row__arrow,
+.resource-doc-row:focus-visible .resource-doc-row__arrow,
+.lpda-doc:hover .lpda-doc__arrow,
+.lpda-doc:focus-visible .lpda-doc__arrow{
+  transform:translateX(6px) !important;
+  background:transparent !important;
+  color:transparent !important;
+}
+
+/* Neutralise les anciens styles qui remplissaient le cercle */
+.resource-doc-row:hover .resource-doc-row__arrow,
+.resource-doc-row__arrow:hover,
+.lpda-doc:hover .lpda-doc__arrow,
+.lpda-doc__arrow:hover{
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+
+@media(max-width:760px){
+  .resource-doc-row__arrow,
+  .lpda-doc__arrow{
+    flex-basis:40px !important;
+    width:40px !important;
+    min-width:40px !important;
+  }
+
+  .resource-doc-row__arrow::before,
+  .lpda-doc__arrow::before{
+    width:32px !important;
+  }
+}
+
+/* RDC ARROWS LIKE SERVICES END */
+
+/* RDC SHORT ARROWS START */
+
+/* Fleches plus courtes, dans l'esprit de Services */
+.lpda-doc__arrow,
+.resource-doc-row__arrow{
+  width:30px !important;
+  min-width:30px !important;
+  height:30px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  overflow:visible !important;
+
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+
+  color:#15365f !important;
+  font-size:0 !important;
+  line-height:1 !important;
+
+  transform:none !important;
+}
+
+.lpda-doc__arrow::before,
+.resource-doc-row__arrow::before{
+  content:"â†’";
+  display:block;
+  color:#15365f;
+  font:400 1.55rem/1 Arial,sans-serif;
+  transition:transform .2s ease;
+}
+
+.lpda-doc:hover .lpda-doc__arrow::before,
+.lpda-doc:focus-visible .lpda-doc__arrow::before,
+.resource-doc-row:hover .resource-doc-row__arrow::before,
+.resource-doc-row:focus-visible .resource-doc-row__arrow::before{
+  transform:translateX(3px);
+}
+
+/* RDC SHORT ARROWS END */
+
+/* RDC CLEAN SERVICE ARROW START */
+
+/* Fleches propres, courtes et sans double trait */
+.lpda-doc__arrow,
+.resource-doc-row__arrow{
+  position:relative !important;
+  display:block !important;
+  flex:0 0 30px !important;
+  width:30px !important;
+  min-width:30px !important;
+  max-width:30px !important;
+  height:20px !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:transparent !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  overflow:visible !important;
+  transform:none !important;
+  transition:transform .2s ease !important;
+}
+
+/* Supprime toutes les anciennes decorations */
+.lpda-doc__arrow::before,
+.lpda-doc__arrow::after,
+.resource-doc-row__arrow::before,
+.resource-doc-row__arrow::after{
+  content:"" !important;
+  position:absolute !important;
+  display:block !important;
+  box-sizing:border-box !important;
+}
+
+/* Trait horizontal court */
+.lpda-doc__arrow::before,
+.resource-doc-row__arrow::before{
+  left:1px !important;
+  top:9px !important;
+  width:23px !important;
+  height:2px !important;
+  border:0 !important;
+  background:#15365f !important;
+  transform:none !important;
+}
+
+/* Pointe */
+.lpda-doc__arrow::after,
+.resource-doc-row__arrow::after{
+  right:1px !important;
+  top:5px !important;
+  width:9px !important;
+  height:9px !important;
+  border-top:2px solid #15365f !important;
+  border-right:2px solid #15365f !important;
+  border-bottom:0 !important;
+  border-left:0 !important;
+  background:transparent !important;
+  transform:rotate(45deg) !important;
+}
+
+/* Petit mouvement au survol */
+.lpda-doc:hover .lpda-doc__arrow,
+.lpda-doc:focus-visible .lpda-doc__arrow,
+.resource-doc-row:hover .resource-doc-row__arrow,
+.resource-doc-row:focus-visible .resource-doc-row__arrow{
+  transform:translateX(3px) !important;
+  background:transparent !important;
+  color:transparent !important;
+}
+
+@media(max-width:760px){
+  .lpda-doc__arrow,
+  .resource-doc-row__arrow{
+    flex-basis:28px !important;
+    width:28px !important;
+    min-width:28px !important;
+    max-width:28px !important;
+  }
+
+  .lpda-doc__arrow::before,
+  .resource-doc-row__arrow::before{
+    width:21px !important;
+  }
+}
+
+/* RDC CLEAN SERVICE ARROW END */
+
+/* RDC MOBILE LPDA DATES HORIZONTAL START */
+@media (max-width: 760px){
+  .lpda-layout{
+    display:block !important;
+  }
+
+  .lpda-aside{
+    position:static !important;
+    top:auto !important;
+    width:100% !important;
+    max-width:none !important;
+    height:auto !important;
+    max-height:none !important;
+    min-height:0 !important;
+    margin:0 0 26px !important;
+    padding:0 !important;
+    overflow:visible !important;
+    border:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+  }
+
+  .lpda-years{
+    position:static !important;
+    top:auto !important;
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    gap:10px !important;
+    width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    min-height:0 !important;
+    margin:0 !important;
+    padding:32px 2px 6px !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    border:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    scroll-snap-type:x proximity !important;
+    scrollbar-width:none !important;
+    -ms-overflow-style:none !important;
+    overscroll-behavior-inline:contain !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  .lpda-years::-webkit-scrollbar{
+    display:none !important;
+    width:0 !important;
+    height:0 !important;
+  }
+
+  .lpda-years__label{
+    position:absolute !important;
+    left:0 !important;
+    top:0 !important;
+    display:block !important;
+    margin:0 !important;
+    padding:0 !important;
+    color:#c7192d !important;
+    font-size:.86rem !important;
+    font-weight:800 !important;
+    letter-spacing:.08em !important;
+    text-transform:uppercase !important;
+  }
+
+  .lpda-years a{
+    flex:0 0 auto !important;
+    min-width:132px !important;
+    width:auto !important;
+    margin:0 !important;
+    padding:12px 16px !important;
+    border:1px solid #d5dfeb !important;
+    border-radius:12px !important;
+    background:#fff !important;
+    color:#173a66 !important;
+    font-size:.92rem !important;
+    font-weight:750 !important;
+    line-height:1.2 !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+    scroll-snap-align:start !important;
+    box-shadow:none !important;
+  }
+
+  .lpda-years a:first-of-type{
+    border-color:#173a66 !important;
+    background:#173a66 !important;
+    color:#fff !important;
+  }
+}
+/* RDC MOBILE LPDA DATES HORIZONTAL END */
+
+/* RDC MOBILE: HIDE LPDA PUBLICATIONS PANEL COMPLETELY START */
+@media (max-width: 760px){
+  .lpda-aside{
+    display:none !important;
+  }
+
+  .lpda-layout{
+    display:block !important;
+    grid-template-columns:1fr !important;
+  }
+
+  .lpda-content{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+  }
+}
+/* RDC MOBILE: HIDE LPDA PUBLICATIONS PANEL COMPLETELY END */
