@@ -2533,3 +2533,194 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--yellow); outlin
 .events-v2__hero{max-width:850px;margin-bottom:38px}.events-v2__hero>span{color:var(--red)}.events-v2__hero h1{margin:10px 0 18px;font:400 clamp(3rem,6vw,6rem)/.9 var(--font-serif);color:var(--navy)}.events-v2__hero p{margin:0;color:var(--muted);line-height:1.75}.events-v2__hero a{display:inline-block;margin-top:20px;color:var(--blue-rich);font-size:.76rem;font-weight:800}.events-v2__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.events-v2__card{min-height:390px;padding:28px;border-radius:24px;border:1px solid rgba(21,54,95,.09);background:#fff;color:inherit;display:flex;flex-direction:column}.events-v2__meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.68rem}.events-v2__meta span{color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.events-v2__card>b{margin:54px 0 20px;color:rgba(16,38,63,.15);font:400 3.2rem/1 var(--font-serif)}.events-v2__card h2{margin:0 0 14px;font:400 1.55rem/1.15 var(--font-serif);color:var(--navy)}.events-v2__card p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.65}.events-v2__card>i{margin-top:auto;padding-top:28px;color:var(--blue-rich);font-size:.74rem;font-weight:800;font-style:normal}
 @media(max-width:900px){.program-v2__hero,.program-v2__context,.resources-v2__hero,.resource-v2__hero{grid-template-columns:1fr}.program-v2__hero-visual{min-height:420px}.program-v2__objective-grid,.events-v2__grid{grid-template-columns:1fr 1fr}.program-v2__sector,.program-v2__sector.is-reverse{grid-template-columns:280px 1fr}.program-v2__sector.is-reverse .program-v2__sector-visual{order:0}.program-overview-v2__grid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.program-v2__hero{border-radius:22px;min-height:0}.program-v2__hero-copy{padding:36px 22px}.program-v2__hero h1{font-size:clamp(2.5rem,12vw,4rem)}.program-v2__hero-visual{padding:12px;min-height:0}.program-v2__mosaic{gap:8px}.program-v2__mosaic figure{min-height:180px;border-radius:15px}.program-v2__mosaic img{padding:16px}.program-v2__mosaic figcaption{left:8px;right:8px;bottom:8px;padding:8px}.program-v2__mosaic figcaption span{font-size:.63rem}.program-v2__monogram{padding:28px;min-height:360px}.program-v2__metrics{justify-content:stretch;display:grid;grid-template-columns:1fr 1fr;margin-bottom:40px}.program-v2__metrics>div{min-width:0}.program-v2__context-copy,.program-v2__vision{padding:25px 22px}.program-v2__context p{text-align:left}.program-v2__section{margin-top:54px}.program-v2__section-head{grid-template-columns:1fr;gap:9px}.program-v2__pillar-grid,.program-v2__objective-grid,.program-overview-v2__grid,.resources-v2__grid,.resource-v2__collections,.events-v2__grid{grid-template-columns:1fr}.program-v2__pillar-grid article>span,.program-v2__objective-grid article>b{margin-bottom:32px}.program-v2__sector,.program-v2__sector.is-reverse{grid-template-columns:1fr}.program-v2__sector-visual{padding:24px}.program-v2__sector-visual img{height:210px}.program-v2__sector-body{padding:25px 20px}.resources-v2__hero>div,.resources-v2__hero>aside,.resource-v2__hero>div,.resource-v2__feature{padding:28px 22px}.resource-v2__group{grid-template-columns:1fr;gap:8px}.resource-v2__year{padding-top:0}.resource-v2__doc{grid-template-columns:44px 1fr 22px}.events-v2__card{min-height:330px}}
+
+
+/* ===== ÉCRIRE AU PRÉSIDENT — POPUP ===== */
+body.president-modal-open{overflow:hidden}
+.president-contact-modal[hidden]{display:none!important}
+.president-contact-modal{position:fixed;inset:0;z-index:5000;display:grid;place-items:center;padding:18px;opacity:0;transition:opacity .18s ease}
+.president-contact-modal.is-open{opacity:1}
+.president-contact-modal__overlay{position:absolute;inset:0;background:rgba(8,25,45,.64);backdrop-filter:blur(3px)}
+.president-contact-modal__dialog{position:relative;z-index:1;width:min(1180px,calc(100vw - 36px));max-height:calc(100vh - 36px);overflow:auto;padding:32px 42px 34px;border-radius:22px;background:#fff;box-shadow:0 28px 90px rgba(3,20,42,.28);transform:translateY(12px) scale(.992);transition:transform .18s ease}
+.president-contact-modal.is-open .president-contact-modal__dialog{transform:none}
+.president-contact-modal__close{position:absolute;top:16px;right:18px;width:42px;height:42px;border:1px solid #d6dee7;border-radius:50%;background:#fff;color:var(--navy);font-size:1.7rem;line-height:1;cursor:pointer}
+.president-contact-modal__head{padding:0 58px 18px 0;margin-bottom:24px;border-bottom:1px solid #e1e6ec}
+.president-contact-modal__head span{display:block;margin-bottom:6px;color:var(--red);font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.president-contact-modal__head h2{margin:0;color:var(--navy);font:400 clamp(1.9rem,3vw,2.8rem)/1.05 var(--font-serif)}
+.president-contact-form{display:grid;grid-template-columns:1fr 1fr;gap:24px 52px}
+.president-field{min-width:0}.president-field--full{grid-column:1/-1}
+.president-field input,.president-field select,.president-field textarea{width:100%;min-width:0;border:1px solid #152235;border-radius:18px;background:#fff;color:#071a36;outline:0;font:500 18px/1.35 var(--font-sans);transition:border-color .18s ease,box-shadow .18s ease}
+.president-field input,.president-field select{height:58px;padding:0 19px}
+.president-field input::placeholder,.president-field textarea::placeholder{color:#071a36;opacity:1}
+.president-field select{appearance:auto;color:#071a36}
+.president-field input[readonly]{background:#fbfcfd;color:#071a36}
+.president-field textarea{min-height:150px;padding:16px 19px 38px;resize:vertical}
+.president-field input:focus,.president-field select:focus,.president-field textarea:focus{border-color:#1b477c;box-shadow:0 0 0 4px rgba(27,71,124,.08)}
+.president-field [aria-invalid="true"],.president-consent input[aria-invalid="true"],.president-civility input[aria-invalid="true"]{outline-color:var(--red)}
+.president-civility{display:flex;align-items:center;gap:36px;border:0;padding:0;margin:0 0 -2px;color:#071a36}
+.president-civility legend{float:left;margin:0 auto 0 0;padding:0;font-size:18px;font-weight:700}
+.president-civility legend b{color:var(--red)}
+.president-civility label{display:inline-flex;align-items:center;gap:8px;font-size:18px;font-weight:700;cursor:pointer}
+.president-civility input{width:28px;height:28px;margin:0;accent-color:var(--navy)}
+.president-message-field{position:relative}
+.president-message-count{position:absolute;right:12px;bottom:-26px;color:#8a94a3;font-size:.82rem;letter-spacing:.03em}
+.president-consent{display:flex;align-items:flex-start;gap:10px;margin-top:6px;color:#65758a;font-size:.82rem;font-weight:500;line-height:1.5}.president-consent b{color:var(--red)}.president-consent input{width:18px;height:18px;flex:0 0 auto;margin-top:2px;accent-color:var(--navy)}
+.president-contact-form__actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:4px}.president-contact-form__actions button{min-height:52px;padding:0 25px;border:0;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;letter-spacing:.035em;cursor:pointer}.president-contact-form__actions button span{margin-left:12px}.president-contact-form__actions p{margin:0;color:#718094;font-size:.78rem;line-height:1.45}.president-contact-form__actions p.is-error{color:var(--red)}.president-contact-form__actions p.is-success{color:#187544}
+.contact-direct-page{min-height:55vh;background:#f5f7f9}
+.mobile-nav-panel__cta{color:var(--navy)!important;font-weight:800!important}
+@media(max-width:720px){
+  .president-contact-modal{padding:8px}
+  .president-contact-modal__dialog{width:100%;max-height:calc(100vh - 16px);padding:24px 16px 28px;border-radius:17px}
+  .president-contact-modal__head{padding-right:44px;margin-bottom:20px}
+  .president-contact-form{grid-template-columns:1fr;gap:15px}
+  .president-field,.president-field--full{grid-column:1}
+  .president-field input,.president-field select{height:54px;font-size:16px;border-radius:15px}
+  .president-field textarea{min-height:140px;font-size:16px;border-radius:15px}
+  .president-civility{grid-column:1;display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+  .president-civility legend{grid-column:1/-1;margin-bottom:2px;font-size:16px}
+  .president-civility label{font-size:16px}
+  .president-civility input{width:24px;height:24px}
+  .president-message-count{right:4px;bottom:-23px}
+  .president-consent{margin-top:12px}
+  .president-contact-form__actions{align-items:stretch;flex-direction:column;margin-top:0}
+  .president-contact-form__actions button{width:100%}
+}
+
+
+
+/* ============================================================
+   ÉCRIRE AU PRÉSIDENT — PAGE DIRECTE
+   ============================================================ */
+body[data-page="ecrire-au-president"]{background:#f6f8fb}
+.president-page{padding:54px 0 90px;background:#f6f8fb}
+.president-page__shell{width:min(1180px,calc(100% - 40px));margin:0 auto}
+.president-page__intro{max-width:900px;margin:0 auto 28px;text-align:center}
+.president-page__intro p{margin:0;color:var(--navy);font:600 clamp(1.05rem,1.8vw,1.35rem)/1.55 var(--font-sans)}
+.president-page__card{padding:34px 42px 38px;border:1px solid rgba(21,54,95,.12);border-radius:24px;background:#fff;box-shadow:0 18px 54px rgba(4,26,52,.07);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.president-page__card:hover{transform:translateY(-3px);border-color:rgba(21,54,95,.22);box-shadow:0 26px 68px rgba(4,26,52,.11)}
+.president-page__title{margin:0 0 26px;color:var(--navy);font:400 clamp(2rem,3.2vw,3rem)/1.05 var(--font-serif)}
+.president-contact-form--page{display:grid;grid-template-columns:1fr 1fr;gap:24px 52px}
+.president-contact-form--page .president-field input,.president-contact-form--page .president-field select,.president-contact-form--page .president-field textarea{width:100%}
+
+@media(max-width:760px){
+  .president-page{padding:28px 0 58px}
+  .president-page__shell{width:min(100% - 24px,680px)}
+  .president-page__intro{margin-bottom:20px;text-align:left}
+  .president-page__intro p{font-size:1rem;line-height:1.5}
+  .president-page__card{padding:22px 16px 26px;border-radius:18px}
+  .president-page__card:hover{transform:none}
+  .president-page__title{margin-bottom:20px;font-size:2rem}
+  .president-contact-form--page{grid-template-columns:1fr;gap:15px}
+  .president-contact-form--page .president-field,.president-contact-form--page .president-field--full{grid-column:1}
+  .president-contact-form--page .president-civility{grid-column:1;display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+  .president-contact-form--page .president-civility legend{grid-column:1/-1}
+}
+\n\n/* ===== ÉCRIRE AU PRÉSIDENT — VERSION COMPACTE SANS CARD ===== */
+body[data-page="ecrire-au-president"] .president-page{
+  padding:28px 0 56px;
+  background:#fff;
+}
+body[data-page="ecrire-au-president"] .president-page__shell{
+  width:min(760px,calc(100% - 32px));
+  margin:0 auto;
+}
+body[data-page="ecrire-au-president"] .president-page__intro{
+  max-width:760px;
+  margin:0 0 22px;
+  text-align:left;
+}
+body[data-page="ecrire-au-president"] .president-page__intro p{
+  margin:0;
+  color:var(--navy);
+  font:600 .9rem/1.5 var(--font-sans);
+}
+body[data-page="ecrire-au-president"] .president-page__content{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+body[data-page="ecrire-au-president"] .president-contact-form--page{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px 24px;
+}
+body[data-page="ecrire-au-president"] .president-field input,
+body[data-page="ecrire-au-president"] .president-field select{
+  height:42px;
+  padding:0 14px;
+  border-radius:12px;
+  font-size:14px;
+}
+body[data-page="ecrire-au-president"] .president-field textarea{
+  min-height:100px;
+  padding:12px 14px 28px;
+  border-radius:12px;
+  font-size:14px;
+}
+body[data-page="ecrire-au-president"] .president-civility{
+  gap:24px;
+  margin:0;
+}
+body[data-page="ecrire-au-president"] .president-civility legend,
+body[data-page="ecrire-au-president"] .president-civility label{
+  font-size:14px;
+}
+body[data-page="ecrire-au-president"] .president-civility input{
+  width:18px;
+  height:18px;
+}
+body[data-page="ecrire-au-president"] .president-message-count{
+  right:4px;
+  bottom:-20px;
+  font-size:.7rem;
+}
+body[data-page="ecrire-au-president"] .president-consent{
+  font-size:.72rem;
+  line-height:1.45;
+}
+body[data-page="ecrire-au-president"] .president-contact-form__actions{
+  gap:12px;
+  margin-top:2px;
+}
+body[data-page="ecrire-au-president"] .president-contact-form__actions button{
+  min-height:42px;
+  padding:0 18px;
+  font-size:.75rem;
+}
+
+@media (max-width:760px){
+  body[data-page="ecrire-au-president"] .president-page{padding:20px 0 44px}
+  body[data-page="ecrire-au-president"] .president-page__shell{width:min(100% - 24px,560px)}
+  body[data-page="ecrire-au-president"] .president-page__intro{margin-bottom:18px}
+  body[data-page="ecrire-au-president"] .president-page__intro p{font-size:.86rem}
+  body[data-page="ecrire-au-president"] .president-contact-form--page{grid-template-columns:1fr;gap:11px}
+  body[data-page="ecrire-au-president"] .president-contact-form--page .president-field,
+  body[data-page="ecrire-au-president"] .president-contact-form--page .president-field--full{grid-column:1}
+  body[data-page="ecrire-au-president"] .president-contact-form--page .president-civility{
+    grid-column:1;
+    display:grid;
+    grid-template-columns:auto auto;
+    justify-content:start;
+    gap:10px 20px;
+  }
+  body[data-page="ecrire-au-president"] .president-contact-form--page .president-civility legend{
+    grid-column:1/-1;
+    margin-bottom:0;
+  }
+  body[data-page="ecrire-au-president"] .president-field input,
+  body[data-page="ecrire-au-president"] .president-field select{height:42px;font-size:14px}
+  body[data-page="ecrire-au-president"] .president-field textarea{min-height:110px;font-size:14px}
+  body[data-page="ecrire-au-president"] .president-contact-form__actions button{width:auto;align-self:flex-start}
+}
+
+
+/* Ajustements demandés — introduction rouge + placeholders -40% */
+body[data-page="ecrire-au-president"] .president-page__intro p{
+  color:var(--red);
+}
+body[data-page="ecrire-au-president"] .president-field input::placeholder,
+body[data-page="ecrire-au-president"] .president-field textarea::placeholder{
+  font-size:8.4px;
+}

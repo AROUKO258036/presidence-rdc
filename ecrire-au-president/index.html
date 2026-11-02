@@ -1,18 +1,60 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
-<meta content="Formulaire de contact institutionnel destiné à orienter votre message vers le service concerné." name="description"/>
-<title>Écrire au Président — Présidence de la République</title>
-<script defer="" src="../page-renderer.js"></script>
-<link href="../rdc.css" rel="stylesheet"/>
-<link href="./style.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <meta content="Adressez un message au Président de la République." name="description"/>
+  <title>Écrire au Président — Présidence de la République</title>
+  <link href="../rdc.css" rel="stylesheet"/>
 </head>
 <body data-page="ecrire-au-president">
-<div data-site-header=""></div>
-<main data-page-content=""></main>
-<div data-site-footer=""></div>
-<script defer="" src="../site-shell.js"></script><script defer="" src="../rdc.js"></script></body>
+  <div data-site-header></div>
+  <main class="president-page">
+    <section class="president-page__shell">
+      <header class="president-page__intro">
+        <p>Vous souhaitez adresser un message au Président de la République du Bénin ? Remplissez le formulaire ci-dessous.</p>
+      </header>
+
+      <section class="president-page__content" aria-label="Formulaire de correspondance">
+        <form class="president-contact-form president-contact-form--page" id="president-contact-form" novalidate>
+          <fieldset class="president-civility president-field--full">
+            <legend>Civilité <b>*</b></legend>
+            <label><input type="radio" name="civilite" value="Monsieur" required><span>Monsieur</span></label>
+            <label><input type="radio" name="civilite" value="Madame" required><span>Madame</span></label>
+          </fieldset>
+
+          <div class="president-field"><input id="pc-nom" name="nom" type="text" autocomplete="family-name" required placeholder="Votre nom *" aria-label="Votre nom"></div>
+          <div class="president-field"><input id="pc-prenoms" name="prenoms" type="text" autocomplete="given-name" required placeholder="Votre prénom *" aria-label="Votre prénom"></div>
+          <div class="president-field"><input id="pc-profession" name="profession" type="text" required placeholder="Votre profession *" aria-label="Votre profession"></div>
+          <div class="president-field"><input id="pc-entreprise" name="entreprise" type="text" placeholder="Votre entreprise" aria-label="Votre entreprise"></div>
+          <div class="president-field"><input id="pc-email" name="email" type="email" autocomplete="email" required placeholder="Votre adresse e-mail *" aria-label="Votre adresse e-mail"></div>
+          <div class="president-field"><input id="pc-telephone" name="telephone" type="tel" autocomplete="tel" required placeholder="Votre numéro de téléphone *" aria-label="Votre numéro de téléphone"></div>
+          <div class="president-field">
+            <select id="pc-pays" name="pays" aria-label="Votre pays">
+              <option value="">Votre pays</option>
+              <option>Bénin</option><option>République Démocratique du Congo</option><option>Afrique du Sud</option><option>Angola</option><option>Belgique</option><option>Burundi</option><option>Canada</option><option>Congo</option><option>France</option><option>Rwanda</option><option>Ouganda</option><option>Zambie</option><option>Autre</option>
+            </select>
+          </div>
+          <div class="president-field"><input id="pc-ville" name="ville" type="text" placeholder="Votre ville de résidence" aria-label="Votre ville de résidence"></div>
+          <div class="president-field"><input id="pc-adresse" name="adresse" type="text" autocomplete="street-address" placeholder="Votre adresse" aria-label="Votre adresse"></div>
+          <div class="president-field"><input id="pc-destinataire" name="destinataire" type="text" value="Message au Président de la République" readonly aria-label="Destinataire"></div>
+
+          <div class="president-field president-field--full"><input id="pc-objet" name="objet" type="text" required placeholder="L'objet de votre message *" aria-label="L'objet de votre message"></div>
+          <div class="president-field president-field--full president-message-field">
+            <textarea id="pc-message" name="message" maxlength="10000" required placeholder="Quel est votre message ? *" aria-label="Votre message"></textarea>
+            <span class="president-message-count" data-president-count>0 / 10 000</span>
+          </div>
+          <label class="president-consent president-field--full"><input type="checkbox" required><span>J’accepte que les informations fournies soient utilisées pour le traitement de ma correspondance. <b>*</b></span></label>
+          <div class="president-contact-form__actions president-field--full">
+            <button type="submit">Envoyer mon message <span aria-hidden="true">→</span></button>
+            <p data-president-status role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+  <div data-site-footer></div>
+  <script defer src="../site-shell.js"></script>
+  <script defer src="../rdc.js"></script>
+</body>
 </html>

@@ -1,140 +1,35 @@
-/*
-  Correctif mobile — Écrire au Président
-  Scope volontairement limité à cette page.
-  Le rendu desktop existant n'est pas modifié.
-*/
-
-@media (max-width: 920px) {
-  html,
-  body[data-page="ecrire-au-president"] {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  body[data-page="ecrire-au-president"] .inner-main {
-    min-width: 0;
-    overflow-x: clip;
-  }
-
-  body[data-page="ecrire-au-president"] .inner-content {
-    width: min(100% - 28px, 680px);
-    margin-inline: auto;
-    padding: 34px 0 64px;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-panel {
-    width: 100%;
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0;
-    background: transparent;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form {
-    width: 100%;
-    margin: 0;
-    padding: 22px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 17px;
-    border: 1px solid rgba(21, 54, 95, .10);
-    border-radius: 22px;
-    background: #fff;
-    box-shadow: 0 16px 42px rgba(3, 22, 44, .07);
-  }
-
-  body[data-page="ecrire-au-president"] .field,
-  body[data-page="ecrire-au-president"] .field--full {
-    grid-column: 1;
-    width: 100%;
-    min-width: 0;
-    gap: 7px;
-  }
-
-  body[data-page="ecrire-au-president"] .field label {
-    margin: 0;
-    color: var(--navy);
-    font-size: .76rem;
-    line-height: 1.35;
-    font-weight: 700;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form input,
-  body[data-page="ecrire-au-president"] .contact-form select,
-  body[data-page="ecrire-au-president"] .contact-form textarea {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    margin: 0;
-    padding: 13px 14px;
-    border: 1px solid #d5dee8;
-    border-radius: 12px;
-    background: #fff;
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.4;
-    box-sizing: border-box;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form input,
-  body[data-page="ecrire-au-president"] .contact-form select {
-    min-height: 52px;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form select {
-    padding-right: 42px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form textarea {
-    min-height: 190px;
-    resize: vertical;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form-submit {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 52px;
-    margin: 2px 0 0;
-    padding: 0 22px;
-    border: 0;
-    border-radius: 999px;
-    background: var(--yellow);
-    color: var(--navy);
-    font-size: .86rem;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    white-space: normal;
-    cursor: pointer;
-  }
-}
-
-@media (max-width: 480px) {
-  body[data-page="ecrire-au-president"] .inner-content {
-    width: min(100% - 22px, 680px);
-    padding: 26px 0 50px;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form {
-    padding: 17px 15px;
-    gap: 15px;
-    border-radius: 18px;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form textarea {
-    min-height: 170px;
-  }
-
-  body[data-page="ecrire-au-president"] .contact-form-submit {
-    min-height: 50px;
-    font-size: .80rem;
-  }
-}
+.write-page{background:#fff;color:var(--ink)}
+.write-container{width:min(1160px,calc(100% - 64px));margin-inline:auto}
+.write-hero{position:relative;overflow:hidden;padding:82px 0 66px;background:linear-gradient(180deg,#f5f8fb 0%,#fff 100%);border-bottom:1px solid #e3e9ef}
+.write-hero::after{content:"";position:absolute;right:-100px;bottom:-220px;width:500px;height:500px;border:1px solid rgba(21,54,95,.06);border-radius:50%}
+.write-kicker{margin:0 0 12px;color:var(--red);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.write-hero h1{margin:0;color:var(--navy);font-family:var(--font-serif);font-size:clamp(2.8rem,5vw,5.4rem);font-weight:400;line-height:1.05}
+.write-hero p:last-child{max-width:790px;margin:22px 0 0;color:var(--muted);font-size:1.02rem;line-height:1.75}
+.write-section{padding:68px 0 92px}
+.write-layout{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.55fr);gap:54px;align-items:start}
+.write-guide{position:sticky;top:132px;padding:34px;border-radius:22px;background:var(--navy);color:#fff;box-shadow:0 20px 50px rgba(6,31,61,.12)}
+.write-guide__eyebrow{margin:0 0 13px;color:var(--yellow);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.write-guide h2{margin:0;font-family:var(--font-serif);font-size:2rem;font-weight:400;line-height:1.25}
+.write-guide__steps{display:grid;gap:0;margin-top:32px;border-top:1px solid rgba(255,255,255,.16)}
+.write-guide__steps>div{display:grid;grid-template-columns:46px 1fr;gap:14px;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.write-guide__steps span{color:var(--yellow);font-family:var(--font-serif);font-size:1.15rem}
+.write-guide__steps p{margin:0;color:rgba(255,255,255,.72);font-size:.86rem;line-height:1.55}
+.write-guide__steps strong{display:block;margin-bottom:5px;color:#fff;font-size:.93rem}
+.write-guide__note{margin:22px 0 0;color:rgba(255,255,255,.58);font-size:.78rem;line-height:1.55}
+.write-form-panel{padding:38px;border:1px solid #dfe7ee;border-radius:24px;background:#fff;box-shadow:0 20px 50px rgba(6,31,61,.07)}
+.write-form-heading{margin-bottom:30px;padding-bottom:24px;border-bottom:1px solid #e5ebf0}
+.write-form-heading p{margin:0 0 7px;color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.write-form-heading h2{margin:0;color:var(--navy);font-family:var(--font-serif);font-size:2.25rem;font-weight:400}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:21px 20px}
+.field{display:grid;gap:8px;min-width:0}.field--full{grid-column:1/-1}
+.field label{color:var(--navy);font-size:.78rem;font-weight:800;letter-spacing:.045em}.field label span,.check-label b{color:var(--red)}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;min-width:0;border:1px solid #cfd9e3;border-radius:11px;background:#fff;color:var(--ink);font:500 16px/1.45 var(--font-sans);outline:0;transition:border-color .18s ease,box-shadow .18s ease}
+.contact-form input,.contact-form select{height:53px;padding:0 14px}.contact-form select{padding-right:38px}.contact-form textarea{min-height:210px;padding:14px;resize:vertical}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,127,255,.08)}
+.contact-form [aria-invalid="true"]{border-color:var(--red);box-shadow:0 0 0 4px rgba(206,16,33,.07)}
+.field__label-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.field__label-row>span{color:#7c8b9a;font-size:.75rem}
+.consent-field{padding-top:2px}.check-label{display:flex!important;align-items:flex-start;gap:11px;color:var(--muted)!important;font-size:.82rem!important;font-weight:500!important;letter-spacing:0!important;line-height:1.55}.check-label input{flex:0 0 auto;width:18px!important;height:18px!important;margin-top:2px;accent-color:var(--navy)}
+.form-actions{margin-top:4px}.contact-form-submit{display:inline-flex;align-items:center;justify-content:center;gap:18px;width:max-content;min-height:54px;padding:0 26px;border:0;border-radius:999px;background:var(--yellow);color:var(--navy);font-weight:800;letter-spacing:.04em;cursor:pointer;transition:transform .18s ease,background .18s ease}.contact-form-submit:hover{transform:translateY(-1px);background:#ffdf34}.contact-form-submit span{font-size:1.2rem}
+.form-status{min-height:1.4em;margin:9px 0 0;color:var(--muted);font-size:.82rem;line-height:1.5}.form-status.is-error{color:var(--red)}.form-status.is-success{color:#187544}
+@media(max-width:900px){.write-container{width:min(100% - 28px,700px)}.write-hero{padding:52px 0 44px}.write-section{padding:42px 0 64px}.write-layout{grid-template-columns:1fr;gap:24px}.write-guide{position:static;padding:26px}.write-guide h2{font-size:1.65rem}.write-guide__steps{grid-template-columns:1fr;}.write-form-panel{padding:26px}.contact-form{grid-template-columns:1fr}.field,.field--full{grid-column:1}.contact-form-submit{width:100%}}
+@media(max-width:480px){.write-container{width:min(100% - 22px,700px)}.write-form-panel{padding:20px 16px;border-radius:18px}.write-guide{padding:22px 18px;border-radius:18px}.write-form-heading h2{font-size:1.8rem}.contact-form{gap:17px}.contact-form textarea{min-height:180px}}

@@ -1,31 +1,17 @@
 (() => {
   'use strict';
-  const $=(s,c=document)=>c.querySelector(s); const $$=(s,c=document)=>[...c.querySelectorAll(s)];
-
-
-  // Current route state.
-  const path=(location.pathname.replace(/\/+$/,'')||'')+'/'; $$('a[href]').forEach(a=>{const h=a.getAttribute('href'); if(h&&h.startsWith('/')&&h!=='/'&&path.startsWith(h))a.classList.add('is-current'); if(h==='/'&&path==='/')a.classList.add('is-current')});
-
-  // Home hero: initial left/right reveal then automatic changes every 6.5 sec.
-  const slides=$$('[data-hero-slide]'), dots=$$('[data-hero-dot]'); let heroIndex=0, heroTimer, direction=1;
-  function showHero(i,manual=false){if(!slides.length)return; slides.forEach((s,n)=>{s.classList.toggle('is-active',n===i);s.classList.remove('is-intro-left','is-intro-right')}); dots.forEach((d,n)=>d.classList.toggle('is-active',n===i)); const current=slides[i]; if(current){current.classList.add(direction>0?'is-intro-left':'is-intro-right');setTimeout(()=>current.classList.remove('is-intro-left','is-intro-right'),1450)} heroIndex=i; direction*=-1; if(manual)restartHero();}
-  function restartHero(){clearInterval(heroTimer); if(slides.length>1)heroTimer=setInterval(()=>showHero((heroIndex+1)%slides.length),6500)}
-  dots.forEach((d,i)=>d.addEventListener('click',()=>showHero(i,true))); if(slides.length){showHero(0);setTimeout(restartHero,1500)}
-
-  // Filters
-  $$('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{const group=btn.closest('[data-filter-bar]'); if(!group)return; $$('[data-filter]',group).forEach(x=>x.classList.remove('is-active'));btn.classList.add('is-active');const v=btn.dataset.filter; $$('[data-category]').forEach(card=>{card.hidden=!(v==='all'||card.dataset.category===v)})}));
-
-  // Searchable list
-  $$('[data-search-input]').forEach(input=>input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase(); const scope=input.closest('[data-search-scope]')||document; $$('[data-searchable]',scope).forEach(row=>row.hidden=q&&!row.textContent.toLowerCase().includes(q))}));
-
-  // Reveal on scroll
-  const reveal=$$('.reveal'); if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12});reveal.forEach(el=>io.observe(el))}else reveal.forEach(el=>el.classList.add('is-visible'));
-
-  // Gallery lightbox
-  const lb=$('[data-lightbox]'), lbImg=lb?.querySelector('img'); $$('[data-lightbox-src]').forEach(card=>card.addEventListener('click',()=>{if(!lb||!lbImg)return;lbImg.src=card.dataset.lightboxSrc;lb.classList.add('is-open')})); $$('[data-lightbox-close]').forEach(b=>b.addEventListener('click',()=>lb?.classList.remove('is-open')));
-
-  // Forms / demo download actions
-  const toast=$('[data-toast]'); function showToast(msg){if(!toast)return;toast.textContent=msg;toast.classList.add('is-show');setTimeout(()=>toast.classList.remove('is-show'),3200)}
-  $$('form[data-demo-form]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();showToast('Formulaire prêt : connectez ensuite votre API ou votre service d’envoi.')}));
-  $$('[data-demo-download]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showToast('Ajoutez le document PDF final à cette action.')}));
+  const form=document.getElementById('portal-search-form');
+  const input=document.getElementById('portal-search-input');
+  const wrap=document.getElementById('search-results-wrap');
+  const results=document.getElementById('search-results');
+  const empty=document.getElementById('search-empty');
+  const count=document.getElementById('search-count');
+  const index=Array.isArray(window.RDC_SEARCH_INDEX)?window.RDC_SEARCH_INDEX:[];
+  const normalize=s=>(s||'').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+  const escapeHTML=s=>(s||'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  function score(entry,q){const words=q.split(/\s+/).filter(Boolean);const t=normalize(entry.title),d=normalize(entry.description),all=normalize(entry.search);let points=0;for(const w of words){if(t===w)points+=30;if(t.includes(w))points+=12;if(d.includes(w))points+=5;if(all.includes(w))points+=2;else return 0;}return points;}
+  function render(){const q=normalize(input?.value);if(!q){if(wrap)wrap.hidden=true;if(results)results.innerHTML='';return;}let matches=index.map(e=>({e,s:score(e,q)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s||a.e.title.localeCompare(b.e.title,'fr')).slice(0,40);wrap.hidden=false;results.innerHTML=matches.map(({e})=>`<a class="search-result" href="${escapeHTML(e.url)}"><div class="search-result__content"><span class="search-result__category">${escapeHTML(e.category)}</span><h2 class="search-result__title">${escapeHTML(e.title)}</h2><p class="search-result__description">${escapeHTML(e.description||'Consulter cette rubrique du portail de la Présidence.')}</p></div><span class="search-result__arrow" aria-hidden="true">→</span></a>`).join('');empty.hidden=matches.length>0;results.hidden=matches.length===0;count.textContent=`${matches.length} résultat${matches.length>1?'s':''}`;}
+  form?.addEventListener('submit',e=>{e.preventDefault();render();});
+  input?.addEventListener('input',()=>{if(!input.value.trim()&&wrap)wrap.hidden=true;});
+  const preset=new URLSearchParams(location.search).get('q');if(preset){input.value=preset;render();}
 })();

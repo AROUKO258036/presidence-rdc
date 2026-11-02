@@ -128,6 +128,9 @@
       header.querySelectorAll('.nav-cluster--left > li').forEach(appendItem);
       header.querySelectorAll('.nav-cluster--right > li').forEach(appendItem);
 
+      const writeLink = header.querySelector('.nav-cta');
+      if (writeLink) appendAnchor(writeLink.getAttribute('href'), 'Écrire au Président', 'mobile-nav-panel__cta');
+
       const searchLink = header.querySelector('.icon-link');
       if (searchLink) appendAnchor(searchLink.getAttribute('href'), 'Rechercher');
 
@@ -443,6 +446,40 @@
     card.addEventListener('mouseenter', stopAuto);
     card.addEventListener('mouseleave', () => { if (started && !animating) startAuto(); });
   });
+
+  /* 4B. ÉCRIRE AU PRÉSIDENT — formulaire directement sur la page */
+  const presidentForm = document.getElementById('president-contact-form');
+  const presidentMessage = document.getElementById('pc-message');
+  const presidentCount = document.querySelector('[data-president-count]');
+  const presidentStatus = document.querySelector('[data-president-status]');
+
+  presidentMessage?.addEventListener('input', () => {
+    if (presidentCount) presidentCount.textContent = `${presidentMessage.value.length.toLocaleString('fr-FR')} / 10 000`;
+  });
+
+  presidentForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    const required = [...presidentForm.querySelectorAll('[required]')];
+    let firstInvalid = null;
+    required.forEach(el => {
+      let valid;
+      if (el.type === 'checkbox') valid = el.checked;
+      else if (el.type === 'radio') valid = !!presidentForm.querySelector(`input[name="${el.name}"]:checked`);
+      else valid = el.checkValidity() && String(el.value).trim() !== '';
+      el.setAttribute('aria-invalid', valid ? 'false' : 'true');
+      if (!valid && !firstInvalid) firstInvalid = el;
+    });
+    if (firstInvalid) {
+      if (presidentStatus) { presidentStatus.textContent = 'Veuillez compléter les champs obligatoires.'; presidentStatus.className = 'is-error'; }
+      firstInvalid.focus();
+      return;
+    }
+    if (presidentStatus) {
+      presidentStatus.textContent = 'Le formulaire est prêt. La transmission doit être connectée au service de réception de la Présidence.';
+      presidentStatus.className = 'is-success';
+    }
+  });
+  presidentForm?.addEventListener('input', event => { event.target.removeAttribute?.('aria-invalid'); });
 
   /* 5. NEWSLETTER + MODALES */
   const modal = document.querySelector('[data-modal]');
